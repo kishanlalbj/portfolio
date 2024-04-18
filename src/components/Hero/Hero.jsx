@@ -18,10 +18,11 @@ const Hero = (props) => {
             className="profile-img"
             style={{
               backgroundImage: `url(${image})`,
-              width: "250px",
-              height: "250px",
+              width: "200px",
+              height: "200px",
               textAlign: "center",
-              borderRadius: "100%"
+              borderRadius: "100%",
+              marginTop: "100px"
             }}
           ></div>
 
