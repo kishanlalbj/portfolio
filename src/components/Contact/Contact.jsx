@@ -2,8 +2,10 @@ import { useContext } from "react";
 import "./Contact.css";
 import ThemeContext from "../../context/ThemeContext";
 
-const Contact = () => {
+const Contact = (props) => {
   const { isDark } = useContext(ThemeContext);
+
+  const { email } = props;
 
   return (
     <section id="contact-me">
@@ -19,7 +21,7 @@ const Contact = () => {
 
         <div>
           <a
-            href="mailto:kishanlalbj@gmail.com"
+            href={`mailto:${email}`}
             className={`hero-cta ${!isDark ? "hero-cta-light" : ""}`}
           >
             Let&apos;s Talk

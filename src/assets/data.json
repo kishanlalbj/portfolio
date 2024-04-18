@@ -1,4 +1,16 @@
 {
+  "personalDetails": {
+    "firstName": "Kishanlal",
+    "lastName": "B J",
+    "email": "kishanlalbj@gmail.com",
+    "workTitle": "Full Stack Developer",
+    "shortIntro": "A seasoned full stack developer with over 8 years of experience in creating web applications for the world",
+    "yearsOfExperience": 7.5,
+    "resume": "resume.pdf",
+    "profileImg": "me.jpg",
+    "aboutMe1": "I'm a passionate MERN stack developer dedicated to crafting robust and user-centric web applications. With a solid foundation in MongoDB, Express.js, React.js, and Node.js, I thrive on bringing ideas to life through clean, efficient code and intuitive user experiences.",
+    "aboutMe2": "Proficient in leveraging tools like Docker to containerize MERN applications and deploying containerized apps to clouds like AWS and Azure."
+  },
   "skills": [
     {
       "id": 1,
@@ -86,6 +98,8 @@
     {
       "id": 2,
       "title": "Twinsta",
+      "image": "",
+      "techStack": ["React", "Node", "MongoDB", "SocketIO"],
       "description": "Social media application in React, Express, Mongo, Node",
       "liveUrl": "https://twinsta.netlify.app",
       "sourceUrl": "https://github.com/kishanlalbj/social-media"
@@ -93,14 +107,18 @@
     {
       "id": 1,
       "title": "Password Generator",
+      "image": "proj-1.png",
       "description": "Generate high security passwords with JS and cool lokking UI",
+      "techStack": ["HTML", "CSS", "Javascript"],
       "liveUrl": "https://fm-password-generator.netlify.app",
       "sourceUrl": "https://github.com/kishanlalbj/password-generator"
     },
     {
       "id": 3,
       "title": "Crowdfunding app",
+      "image": "proj-3.png",
       "description": "A simple crowd funding app for products",
+      "techStack": ["HTML", "CSS", "Javascript"],
       "liveUrl": "https://laughing-kalam-667abd.netlify.app/",
       "sourceUrl": "https://github.com/kishanlalbj/crowdfund-fronendmentor"
     }

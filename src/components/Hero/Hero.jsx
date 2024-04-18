@@ -1,29 +1,37 @@
 import { useContext } from "react";
 import "./Hero.css";
 import ThemeContext from "../../context/ThemeContext";
+import useConfetti from "../../hooks/useConfetti";
 
 const Hero = (props) => {
   const { isDark } = useContext(ThemeContext);
-  const { social } = props;
+  const { social, firstName, workTitle, heroText, image, resume } = props;
+  const { dots, onMouseMove } = useConfetti();
 
   return (
-    <div id="home">
+    <div id="home" onMouseMove={onMouseMove}>
       <div className="hero-wrapper">
+        {dots.map((e) => e)}
+
         <div className="hero">
-          <img
-            src="https://randomuser.me/api/portraits/men/43.jpg"
-            alt="profile-img"
-          />
+          <div
+            className="profile-img"
+            style={{
+              backgroundImage: `url(${image})`,
+              width: "250px",
+              height: "250px",
+              textAlign: "center",
+              borderRadius: "100%"
+            }}
+          ></div>
+
+          <div className="profile-img"></div>
 
           <h1>
-            <span className="gradient-text">I am Kishan</span>, Full Stack Web
-            Developer
+            <span className="gradient-text">I am {firstName}</span>, {workTitle}
           </h1>
 
-          <p>
-            A seasoned full stack developer with over 8 years of experience in
-            creating web applications for the world
-          </p>
+          <p>{heroText}</p>
 
           <div className="social-container">
             {social?.map((e) => (
@@ -41,7 +49,7 @@ const Hero = (props) => {
 
           <div className="hero-action">
             <a
-              href="/resume.pdf"
+              href={`${resume}`}
               target="_blank"
               className={`hero-cta ${!isDark ? "hero-cta-light" : ""}`}
             >

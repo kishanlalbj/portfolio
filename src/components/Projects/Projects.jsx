@@ -29,7 +29,11 @@ const Projects = (props) => {
                   </div>
 
                   <img
-                    src="https://picsum.photos/800/600"
+                    src={
+                      project.image
+                        ? project.image
+                        : "https://picsum.photos/800/600"
+                    }
                     alt="project-img"
                     className="project-img"
                   ></img>

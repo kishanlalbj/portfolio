@@ -34,7 +34,7 @@
 }
 
 .nav-menu-light {
-  background-color: var(--light-ternary-color);
+  background-color: transparent;
 }
 
 .nav-item {

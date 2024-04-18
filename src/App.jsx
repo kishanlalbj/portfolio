@@ -18,14 +18,27 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ isDark }}>
-      {console.log(isDark)}
       <div className={!isDark ? "light" : "dark"}>
         <Navbar onSwitchTheme={handleSwitchTheme}></Navbar>
 
-        <Hero social={data.social} />
+        <Hero
+          firstName={data.personalDetails.firstName}
+          lastName={data.personalDetails.lastName}
+          workTitle={data.personalDetails.workTitle}
+          image={data.personalDetails.profileImg}
+          heroText={data.personalDetails.shortIntro}
+          resume={data.personalDetails.resume}
+          social={data.social}
+        />
 
         <div className="container">
-          <About skills={data.skills} />
+          <About
+            aboutText={[
+              data.personalDetails.aboutMe1,
+              data.personalDetails.aboutMe2
+            ]}
+            skills={data.skills}
+          />
 
           <Projects projects={data.projects} />
 
