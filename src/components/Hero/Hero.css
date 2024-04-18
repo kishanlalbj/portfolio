@@ -52,7 +52,7 @@
   padding: 12px 16px;
   border-radius: 10px;
   color: var(--ternary-color);
-  font-size: 24px;
+  font-size: 1rem;
   font-weight: 500;
   border: 1px solid transparent;
   background: linear-gradient(

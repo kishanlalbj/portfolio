@@ -25,7 +25,9 @@ const Projects = (props) => {
                     </h2>
                     <p className="project-desc">{project.description}</p>
 
-                    <div className="grradient-text">React, Mongo, Node</div>
+                    <div className="grradient-text">
+                      {project?.techStack.join(" ")}
+                    </div>
                   </div>
 
                   <img
