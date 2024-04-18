@@ -1,0 +1,120 @@
+{
+  "skills": [
+    {
+      "id": 1,
+      "name": "JavaScript",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+    },
+    {
+      "id": 2,
+      "name": "HTML5",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+    },
+    {
+      "id": 3,
+      "name": "CSS3",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
+    },
+    {
+      "id": 4,
+      "name": "ReactJS",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
+    },
+    {
+      "id": 5,
+      "name": "NodeJS",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+    },
+    {
+      "id": 6,
+      "name": "ExpressJS",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg"
+    },
+    {
+      "id": 7,
+      "name": "Mongo",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+    },
+    {
+      "id": 9,
+      "name": "MySQL",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+    },
+    {
+      "id": 8,
+      "name": "Docker",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg"
+    }
+  ],
+  "works": [
+    {
+      "id": 1,
+      "company": "Oracle",
+      "isPresent": true,
+      "designation": "Project Lead",
+      "place": "Bangalore"
+    },
+    {
+      "id": 2,
+      "company": "Accenture",
+      "isPresent": false,
+      "from": "Dec 2020",
+      "to": "May 2021",
+      "designation": "Senior Analyst",
+      "place": "Bangalore"
+    },
+    {
+      "id": 3,
+      "company": "Wipro Digital",
+      "isPresent": false,
+      "to": "Dec 2020",
+      "from": "June 2016",
+      "designation": "Senior Project Engineer",
+      "place": "Bangalore"
+    },
+    {
+      "id": 4,
+      "company": "Wipro Limited",
+      "isPresent": false,
+      "from": "Feb 2016",
+      "to": "May 2016",
+      "designation": "Project Intern",
+      "place": "Hyderabad"
+    }
+  ],
+  "projects": [
+    {
+      "id": 2,
+      "title": "Twinsta",
+      "description": "Social media application in React, Express, Mongo, Node",
+      "liveUrl": "https://twinsta.netlify.app",
+      "sourceUrl": "https://github.com/kishanlalbj/social-media"
+    },
+    {
+      "id": 1,
+      "title": "Password Generator",
+      "description": "Generate high security passwords with JS and cool lokking UI",
+      "liveUrl": "https://fm-password-generator.netlify.app",
+      "sourceUrl": "https://github.com/kishanlalbj/password-generator"
+    },
+    {
+      "id": 3,
+      "title": "Crowdfunding app",
+      "description": "A simple crowd funding app for products",
+      "liveUrl": "https://laughing-kalam-667abd.netlify.app/",
+      "sourceUrl": "https://github.com/kishanlalbj/crowdfund-fronendmentor"
+    }
+  ],
+  "social": [
+    {
+      "id": 1,
+      "name": "linkedin",
+      "url": "https://linkedin.com/in/kishanlalbj"
+    },
+    {
+      "id": 2,
+      "name": "github",
+      "url": "https://github.com/kishanlalbj"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+:root {
+  /* --primary-color: rgba(0, 187, 248);
+  --secondary-color: rgba(0, 245, 212); */
+
+  --primary-color: hsla(216, 96%, 56%, 1);
+  --secondary-color: hsla(178, 64%, 65%, 1);
+  --ternary-color: #28282b;
+  --primary-background-color: #333;
+  --primary-text-color: #fff;
+
+  --light-primary-background-color: #fff;
+  --light-primary-text-color: #333;
+  --light-ternary-color: rgb(249 250 251);
+}
+
+.light {
+  background-color: var(--light-primary-background-color);
+  color: var(--light-primary-text-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: Source Code Pro, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  font-size: 18px;
+}
+
+section {
+  margin-top: 130px;
+}
+
+.title {
+  font-size: 250%;
+  margin: 48px 0;
+  text-align: center;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    260deg,
+    var(--primary-color) 10%,
+    var(--secondary-color) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media only screen and (max-width: 786px) {
+  body {
+    font-size: 16px;
+  }
+}
