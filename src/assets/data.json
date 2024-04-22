@@ -96,6 +96,15 @@
   ],
   "projects": [
     {
+      "id": 4,
+      "title": "Music Player",
+      "image": "proj-4.png",
+      "techStack": ["React", "Node", "MongoDB", "ExpressJS"],
+      "description": "A Music player application to enjoy listening to your musics",
+      "liveUrl": "",
+      "sourceUrl": "https://github.com/kishanlalbj/music-player"
+    },
+    {
       "id": 2,
       "title": "Twinsta",
       "image": "",
