@@ -7,7 +7,7 @@ const Projects = (props) => {
   const { projects } = props;
 
   return (
-    <section id="projects">
+    <section id="projects" className="hidden">
       <div className="projects-wrapper">
         <div>
           <h2 className="title">My Projects </h2>
@@ -15,7 +15,7 @@ const Projects = (props) => {
           <div className="projects-container">
             {projects.map((project) => (
               <div
-                className={`project ${!isDark ? "project-light" : ""}`}
+                className={`project hidden ${!isDark ? "project-light" : ""}`}
                 key={project.id}
               >
                 <div className="project-container">

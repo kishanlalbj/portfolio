@@ -8,8 +8,8 @@ const Contact = (props) => {
   const { email } = props;
 
   return (
-    <section id="contact-me">
-      <div>
+    <section className="hidden" id="contact-me">
+      <div className="hidden">
         <h1 className="title">Contact me</h1>
       </div>
 

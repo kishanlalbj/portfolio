@@ -18,7 +18,7 @@ const About = (props) => {
   const { skills, aboutText } = props;
 
   return (
-    <section id="about-me">
+    <section className="hidden" id="about-me">
       <div className="about-wrapper">
         <h4 className="title">About me </h4>
         <div className="about-grid">

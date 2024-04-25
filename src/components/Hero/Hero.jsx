@@ -9,7 +9,7 @@ const Hero = (props) => {
   const { dots, onMouseMove } = useConfetti();
 
   return (
-    <div id="home" onMouseMove={onMouseMove}>
+    <div id="home" className="hidden" onMouseMove={onMouseMove}>
       <div className="hero-wrapper">
         {dots.map((e) => e)}
 

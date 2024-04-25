@@ -22,7 +22,7 @@ export const calcDistance = (a, b) => {
 
 export const generateRandomPoint = () => {
   // Get the dimensions of the browser window.
-  var width = window.innerWidth;
+  var width = window.innerWidth - 170;
   var height = window.innerHeight;
 
   // Generate a random x and y coordinate.

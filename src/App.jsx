@@ -6,15 +6,25 @@ import Navbar from "./components/Navbar/Navbar";
 import data from "./assets/data.json";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ThemeContext from "./context/ThemeContext";
+import observer from "./utils/observer.js";
 
 function App() {
-  const [isDark, setDark] = useState(true);
+  const [isDark, setDark] = useState(
+    localStorage.getItem("isDark") === "true" ? true : false
+  );
 
   const handleSwitchTheme = () => {
+    localStorage.setItem("isDark", !isDark);
     setDark((prev) => !prev);
   };
+
+  useEffect(() => {
+    const hiddenElements = document.querySelectorAll(".hidden");
+
+    hiddenElements.forEach((e) => observer.observe(e));
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ isDark }}>
