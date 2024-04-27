@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import "./About.css";
 import ThemeContext from "../../context/ThemeContext";
+import Title from "../ui/Title";
 
 const Skill = (props) => {
   const { isDark } = useContext(ThemeContext);
@@ -20,7 +21,7 @@ const About = (props) => {
   return (
     <section className="hidden" id="about-me">
       <div className="about-wrapper">
-        <h4 className="title">About me </h4>
+        <Title text={"About me"} />
         <div className="about-grid">
           <div className="profile-img"></div>
 

@@ -81,6 +81,25 @@
   gap: 24px;
 }
 
+.hero-title::after {
+    content: '|';
+    width: 1em;
+    height: 2em;
+    background-color: transparent;
+    animation: blink 1s infinite;
+}
+
+
+@keyframes blink {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+}
+
 @media only screen and (max-width: 786px) {
   .hero h1 {
     font-size: 1.5rem;

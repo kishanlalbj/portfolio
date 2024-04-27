@@ -1,0 +1,19 @@
+.title {
+    font-size: 250%;
+    margin: 48px 0;
+    text-align: center;
+    position: relative;
+}
+
+
+.title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 0.2rem;
+    margin-top: 1em;
+    background-color: var(--primary-color);
+    transform: translate(-50%);
+}

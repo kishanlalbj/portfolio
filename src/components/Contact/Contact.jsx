@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import "./Contact.css";
 import ThemeContext from "../../context/ThemeContext";
+import Title from "../ui/Title";
 
 const Contact = (props) => {
   const { isDark } = useContext(ThemeContext);
@@ -10,7 +11,7 @@ const Contact = (props) => {
   return (
     <section className="hidden" id="contact-me">
       <div className="hidden">
-        <h1 className="title">Contact me</h1>
+        <Title text="Contact Me"></Title>
       </div>
 
       <div className="contacts-container">

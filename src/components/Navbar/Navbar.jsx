@@ -17,8 +17,8 @@ const Navbar = (props) => {
       <div className="container">
         <a href="#" className="logo">
           {/* <img src={logo} width={"50%"} /> */}
-          <h4>
-            &lt;kishanlalbj.<span className="gradient-text">dev</span> /&gt;
+          <h4 className="logo-text">
+            kishanlalbj.<span className="gradient-text">dev</span>
           </h4>
         </a>
 
@@ -54,19 +54,33 @@ const Navbar = (props) => {
             </a>
           </li>
 
-          <li onClick={handleClose}>
-            {isDark ? (
-              <i
-                className="fa-solid fa-moon nav-item"
-                onClick={onSwitchTheme}
-              ></i>
-            ) : (
-              <i
-                className="fa-solid fa-sun nav-item"
-                style={{ color: "#FDB813" }}
-                onClick={onSwitchTheme}
-              ></i>
-            )}
+          <li onClick={handleClose} className="nav-theme-item">
+            <i
+              className="fa-solid fa-moon nav-item animated-icon"
+              onClick={onSwitchTheme}
+              style={{
+                // position: "absolute",
+                // bottom: 0,
+                display: isDark ? "block" : "none",
+                animation: isDark
+                  ? "animated-in .2s forwards"
+                  : "animated-out 5s forwards",
+              }}
+            ></i>
+
+            <i
+              className="fa-solid fa-sun nav-item"
+              style={{
+                color: "#FDB813",
+                // position: "absolute",
+                // bottom: 0,
+                display: !isDark ? "block" : "none",
+                animation: !isDark
+                  ? "animated-in .2s forwards"
+                  : "animated-out 5s forwards",
+              }}
+              onClick={onSwitchTheme}
+            ></i>
           </li>
         </ul>
       </div>

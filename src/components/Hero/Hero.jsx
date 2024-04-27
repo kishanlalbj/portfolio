@@ -22,13 +22,13 @@ const Hero = (props) => {
               height: "200px",
               textAlign: "center",
               borderRadius: "100%",
-              marginTop: "100px"
+              marginTop: "100px",
             }}
           ></div>
 
           <div className="profile-img"></div>
 
-          <h1>
+          <h1 className="hero-title">
             <span className="gradient-text">I am {firstName}</span>, {workTitle}
           </h1>
 

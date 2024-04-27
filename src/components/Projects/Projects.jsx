@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import "./Projects.css";
 import ThemeContext from "../../context/ThemeContext";
+import Title from "../ui/Title";
 
-const Projects = (props) => {
+let Projects = (props) => {
   const { isDark } = useContext(ThemeContext);
   const { projects } = props;
 
@@ -10,7 +11,7 @@ const Projects = (props) => {
     <section id="projects" className="hidden">
       <div className="projects-wrapper">
         <div>
-          <h2 className="title">My Projects </h2>
+          <Title text="Projects"></Title>
 
           <div className="projects-container">
             {projects.map((project) => (
@@ -61,5 +62,7 @@ const Projects = (props) => {
     </section>
   );
 };
+
+Projects = memo(Projects);
 
 export default Projects;
