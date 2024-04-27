@@ -22,7 +22,7 @@ const Hero = (props) => {
               height: "200px",
               textAlign: "center",
               borderRadius: "100%",
-              marginTop: "100px",
+              marginTop: "100px"
             }}
           ></div>
 

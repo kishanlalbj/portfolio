@@ -1,21 +1,25 @@
 :root {
   /* --primary-color: rgba(0, 187, 248);
   --secondary-color: rgba(0, 245, 212); */
+  /* 706e5c */
 
-  --primary-color: hsla(216, 96%, 56%, 1);
-  --secondary-color: hsla(178, 64%, 65%, 1);
+  --primary-color: #b5ad97;
+  --secondary-color: #978d6b;
+
   --ternary-color: #28282b;
   --primary-background-color: #333;
   --primary-text-color: #fff;
 
-  --light-primary-background-color: #fff;
+  --light-primary-background-color: #f8f8f8;
   --light-primary-text-color: #333;
   --light-ternary-color: rgb(249 250 251);
 }
 
 .light {
-  background-color: var(--light-primary-background-color);
+  background-color: #e7e7e7;
   color: var(--light-primary-text-color);
+  --primary-color: hsla(216, 96%, 56%, 1);
+  --secondary-color: hsla(178, 64%, 65%, 1);
 }
 
 * {
@@ -43,9 +47,10 @@ section {
 
 .gradient-text {
   background: linear-gradient(
-    260deg,
-    var(--primary-color) 10%,
-    var(--secondary-color) 100%
+    to left,
+
+    var(--secondary-color) 10%,
+    var(--primary-color) 70%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -133,7 +138,23 @@ section {
 }
 
 @media only screen and (max-width: 786px) {
+  .container {
+    width: 90%;
+  }
+
   body {
     font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1441px) and (max-width: 1920px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1921px) {
+  .container {
+    width: 40%;
   }
 }

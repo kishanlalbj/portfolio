@@ -54,19 +54,21 @@
   color: var(--ternary-color);
   font-size: 1rem;
   font-weight: 500;
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   background: linear-gradient(
-    260deg,
+    to left,
     var(--primary-color) 10%,
     var(--secondary-color) 100%
   );
   transition: all;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .hero-cta:hover {
   border-color: var(--primary-color);
   color: var(--primary-text-color);
   background: transparent;
+  border-width: 1px;
   transform: scale(1.05);
 }
 
@@ -82,22 +84,30 @@
 }
 
 .hero-title::after {
-    content: '|';
-    width: 1em;
-    height: 2em;
-    background-color: transparent;
-    animation: blink 1s infinite;
+  content: "|";
+  width: 1em;
+  height: 2em;
+  background-color: transparent;
+  animation: blink 1s infinite;
 }
 
+@keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 
 @keyframes blink {
-    from {
-      opacity: 1;
-    }
+  from {
+    opacity: 1;
+  }
 
-    to {
-      opacity: 0;
-    }
+  to {
+    opacity: 0;
+  }
 }
 
 @media only screen and (max-width: 786px) {
