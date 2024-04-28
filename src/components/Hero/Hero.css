@@ -85,19 +85,11 @@
 
 .hero-title::after {
   content: "|";
-  width: 1em;
-  height: 2em;
-  background-color: transparent;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
   animation: blink 1s infinite;
-}
-
-@keyframes type {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  transition: none;
 }
 
 @keyframes blink {

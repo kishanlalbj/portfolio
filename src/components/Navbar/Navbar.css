@@ -9,19 +9,18 @@
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
 }
 
-
 .log-text {
   position: relative;
 }
 
-.logo-text::before, .logo-text::after {
-  content: '<';
+.logo-text::before,
+.logo-text::after {
+  content: "<";
   visibility: hidden;
 }
 
-
 .logo-text:hover::before {
-  content: ' <';
+  content: " <";
   visibility: visible;
   background: linear-gradient(
     260deg,
@@ -34,7 +33,7 @@
 }
 
 .logo-text:hover::after {
-  content: ' />';
+  content: " />";
   visibility: visible;
   background: linear-gradient(
     260deg,
@@ -45,8 +44,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
 
 .logo {
   text-decoration: none;
@@ -80,27 +77,27 @@
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-  transition: font-size .2s ease-in-out;
+  transition: font-size 0.2s ease-in-out;
   font-size: 16px;
   /* position: inherit; */
 }
 
-.nav-item:hover, .nav-item:active {
+.nav-item:hover,
+.nav-item:active {
   background: linear-gradient(
-      260deg,
-      var(--primary-color) 10%,
-      var(--secondary-color) 100%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    260deg,
+    var(--primary-color) 10%,
+    var(--secondary-color) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav-mob-open,
 .nav-mob-close {
   display: none;
 }
-
 
 @keyframes animated-in {
   0% {
@@ -116,11 +113,9 @@
   }
 }
 
-
 @keyframes animated-out {
   0% {
     transform: translateY(0px);
-   
   }
 
   10% {
@@ -130,15 +125,11 @@
   50% {
     transform: translateY(75px);
     opacity: 0;
- 
-
-
   }
 
   100% {
     transform: translateY(250px);
     opacity: 0;
-
   }
 }
 

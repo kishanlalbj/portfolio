@@ -14,7 +14,7 @@ const Contact = (props) => {
         <Title text="Contact Me"></Title>
       </div>
 
-      <div className="contacts-container">
+      <div className="contacts-container hidden">
         <p>
           I&apos;m currently available for full time work, Please feel free to
           get in touch with me

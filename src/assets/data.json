@@ -56,6 +56,11 @@
       "id": 8,
       "name": "Docker",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg"
+    },
+    {
+      "id": 10,
+      "name": "Java",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
     }
   ],
   "works": [
@@ -117,7 +122,7 @@
       "id": 1,
       "title": "Password Generator",
       "image": "proj-1.png",
-      "description": "Generate high security passwords with JS and cool lokking UI",
+      "description": "Generate high security passwords",
       "techStack": ["HTML", "CSS", "Javascript"],
       "liveUrl": "https://fm-password-generator.netlify.app",
       "sourceUrl": "https://github.com/kishanlalbj/password-generator"

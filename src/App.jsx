@@ -23,7 +23,9 @@ function App() {
   useEffect(() => {
     const hiddenElements = document.querySelectorAll(".hidden");
 
-    hiddenElements.forEach((e) => observer.observe(e));
+    hiddenElements.forEach((e) => {
+      observer.observe(e);
+    });
   }, []);
 
   return (
