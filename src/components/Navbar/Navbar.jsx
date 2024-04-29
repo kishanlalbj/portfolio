@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import { useContext, useRef } from "react";
-import ThemeContext from "../../context/ThemeContext";
+import ThemeContext from "@contexts/ThemeContext";
 
 const Navbar = (props) => {
   const { onSwitchTheme } = props;
@@ -16,7 +16,6 @@ const Navbar = (props) => {
     <div className={`navbar ${!isDark ? "navbar-light" : ""}`}>
       <div className="container">
         <a href="#" className="logo">
-          {/* <img src={logo} width={"50%"} /> */}
           <h4 className="logo-text">
             kishanlalbj.<span className="gradient-text">dev</span>
           </h4>
@@ -43,6 +42,11 @@ const Navbar = (props) => {
             </a>
           </li>
           <li onClick={handleClose}>
+            <a href="#work" className="nav-item">
+              Work
+            </a>
+          </li>
+          <li onClick={handleClose}>
             <a href="#projects" className="nav-item">
               Projects
             </a>
@@ -59,12 +63,10 @@ const Navbar = (props) => {
               className="fa-solid fa-moon nav-item animated-icon"
               onClick={onSwitchTheme}
               style={{
-                // position: "absolute",
-                // bottom: 0,
                 display: isDark ? "block" : "none",
                 animation: isDark
                   ? "animated-in .2s forwards"
-                  : "animated-out 5s forwards",
+                  : "animated-out 5s forwards"
               }}
             ></i>
 
@@ -72,12 +74,10 @@ const Navbar = (props) => {
               className="fa-solid fa-sun nav-item"
               style={{
                 color: "#FDB813",
-                // position: "absolute",
-                // bottom: 0,
                 display: !isDark ? "block" : "none",
                 animation: !isDark
                   ? "animated-in .2s forwards"
-                  : "animated-out 5s forwards",
+                  : "animated-out 5s forwards"
               }}
               onClick={onSwitchTheme}
             ></i>

@@ -1,11 +1,11 @@
 import { memo, useContext } from "react";
 import "./Projects.css";
-import ThemeContext from "../../context/ThemeContext";
+import ThemeContext from "@contexts/ThemeContext";
 import Title from "../ui/Title";
 
 let Projects = (props) => {
   const { isDark } = useContext(ThemeContext);
-  const { projects } = props;
+  const { projects, githubUrl } = props;
 
   return (
     <section id="projects" className="hidden">
@@ -16,7 +16,7 @@ let Projects = (props) => {
           <div className="projects-container">
             {projects.map((project) => (
               <div
-                className={`project hidden ${!isDark ? "project-light" : ""}`}
+                className={`project ${!isDark ? "project-light" : ""} hidden`}
                 key={project.id}
               >
                 <div className="project-container">
@@ -59,6 +59,17 @@ let Projects = (props) => {
           </div>
         </div>
       </div>
+      <br />
+      <br />
+      <center>
+        <a
+          href={githubUrl}
+          target="_blank"
+          className={`hidden hero-cta ${!isDark ? "hero-cta-light" : ""}`}
+        >
+          More Projects
+        </a>
+      </center>
     </section>
   );
 };

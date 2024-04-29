@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import "./Hero.css";
-import ThemeContext from "../../context/ThemeContext";
-import useConfetti from "../../hooks/useConfetti";
+import ThemeContext from "@contexts/ThemeContext";
+import useConfetti from "@hooks/useConfetti";
 
 const Hero = (props) => {
   const { isDark } = useContext(ThemeContext);
@@ -14,7 +14,7 @@ const Hero = (props) => {
   const [idx, setIdx] = useState(0);
 
   useEffect(() => {
-    let text = `${firstName},`;
+    let text = `I'm ${firstName}, `;
 
     let timer = setTimeout(() => {
       setName((prev) => prev.concat(text[index]));

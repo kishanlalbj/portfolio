@@ -1,0 +1,24 @@
+.achievements-list {
+  list-style: none;
+}
+
+.achievements-list li {
+  position: relative;
+  border-left: 1px solid var(--primary-color);
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+}
+
+.achievements-list li::before {
+  content: url("../../assets/medal.svg");
+  background-size: contain;
+  position: absolute;
+  margin-right: 15px;
+  left: -12px;
+  top: 0;
+}
+
+.achievements-link {
+  text-decoration: none;
+  color: inherit;
+}

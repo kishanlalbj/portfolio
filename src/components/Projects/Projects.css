@@ -9,9 +9,9 @@
   color: var(--primary-text-color);
   padding: 24px;
   border-radius: 4px;
-  transition: 0.2s;
+  transition: transform 0.1s;
   position: relative;
-  height: 245px;
+  height: 15em;
 }
 
 .project-light {
@@ -59,7 +59,23 @@
   margin-top: 12px;
 }
 
+@media only screen and (min-width: 431px) and (max-width: 768px) {
+  .project {
+    height: 20em;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .project {
+    height: 17em;
+  }
+}
+
 @media only screen and (max-width: 430px) {
+  .project {
+    height: 28em;
+  }
+
   .projects-container {
     grid-template-columns: 1fr;
   }

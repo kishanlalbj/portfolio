@@ -1,31 +1,38 @@
-import "./App.css";
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
-import Hero from "./components/Hero/Hero";
-import Navbar from "./components/Navbar/Navbar";
-import data from "./assets/data.json";
-import Projects from "./components/Projects/Projects";
-import Footer from "./components/Footer/Footer";
 import { useEffect, useState } from "react";
-import ThemeContext from "./context/ThemeContext";
-import observer from "./utils/observer.js";
+import About from "@components/About/About";
+import Contact from "@components/Contact/Contact";
+import Hero from "@components/Hero/Hero";
+import Navbar from "@components/Navbar/Navbar";
+import Projects from "@components/Projects/Projects";
+import Work from "@components/Work/Work";
+import Footer from "@components/Footer/Footer";
+import ThemeContext from "@contexts/ThemeContext";
+import useIntersectionObserver from "@hooks/useIntersectionObserver";
+import data from "./assets/data.json";
+import "./App.css";
+import Achievements from "./components/Achievements/Achievements";
 
 function App() {
   const [isDark, setDark] = useState(
     localStorage.getItem("isDark") === "true" ? true : false
   );
 
+  const [githubUrl, setGithubUrl] = useState("");
+
   const handleSwitchTheme = () => {
     localStorage.setItem("isDark", !isDark);
     setDark((prev) => !prev);
   };
 
-  useEffect(() => {
-    const hiddenElements = document.querySelectorAll(".hidden");
+  const getGithubUrl = () => {
+    const url = data.social.find((e) => e.name == "github")?.url;
+    setGithubUrl(url);
+  };
 
-    hiddenElements.forEach((e) => {
-      observer.observe(e);
-    });
+  useIntersectionObserver();
+
+  useEffect(() => {
+    getGithubUrl();
   }, []);
 
   return (
@@ -52,7 +59,13 @@ function App() {
             skills={data.skills}
           />
 
-          <Projects projects={data.projects} />
+          <section className="work-and-achievements">
+            <Work works={data.works} />
+
+            <Achievements achievements={data.achievements} />
+          </section>
+
+          <Projects projects={data.projects} githubUrl={githubUrl} />
 
           <Contact />
         </div>

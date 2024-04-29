@@ -148,5 +148,23 @@
       "name": "github",
       "url": "https://github.com/kishanlalbj"
     }
+  ],
+  "achievements": [
+    {
+      "id": 1,
+      "title": "Azure Fundamentals",
+      "issuer": "Microsoft",
+      "date": "Sept 2020",
+      "expiry": "no-expire",
+      "badge": "https://www.credly.com/badges/4dfc951b-4867-43a9-aaf1-bbdce043253f/public_url"
+    },
+    {
+      "id": 2,
+      "title": "Full Stack Developer",
+      "issuer": "StackRoute",
+      "date": "Sept 2016",
+      "expiry": "no-expire",
+      "badge": ""
+    }
   ]
 }

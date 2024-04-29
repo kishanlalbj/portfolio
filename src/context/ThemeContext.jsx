@@ -1,13 +1,7 @@
 import { createContext } from "react";
 
-console.log("local", localStorage.getItem("isDark"));
-console.log(
-  "context",
-  localStorage.getItem("isDark") === "true" ? true : false
-);
-
 const ThemeContext = createContext({
-  isDark: localStorage.getItem("isDark") === "true" ? true : false
+  isDark: localStorage.getItem("isDark") === "false" ? false : true
 });
 
 export default ThemeContext;

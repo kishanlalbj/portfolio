@@ -21,15 +21,12 @@ export const calcDistance = (a, b) => {
 };
 
 export const generateRandomPoint = () => {
-  // Get the dimensions of the browser window.
   var width = window.innerWidth - 170;
   var height = window.innerHeight;
 
-  // Generate a random x and y coordinate.
   var x = Math.random() * width;
   var y = Math.random() * height;
 
-  // Return the random point as an object.
   return {
     x: x,
     y: y

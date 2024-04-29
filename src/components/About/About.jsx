@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./About.css";
-import ThemeContext from "../../context/ThemeContext";
+import ThemeContext from "@contexts/ThemeContext";
 import Title from "../ui/Title";
 
 const Skill = (props) => {
@@ -37,25 +37,6 @@ const About = (props) => {
             </div>
           </div>
         </div>
-
-        {/* <div className="achievements">
-          <div className="achievement">
-            <h1 className="gradient-text">""</h1>
-            <p>Years of experience</p>
-          </div>
-          <hr />
-
-          <div className="achievement">
-            <h1 className="gradient-text">10+</h1>
-            <p>Projects completed</p>
-          </div>
-          <hr />
-
-          <div className="achievement">
-            <h1 className="gradient-text">15+</h1>
-            <p>Projects completed</p>
-          </div>
-        </div> */}
       </div>
     </section>
   );

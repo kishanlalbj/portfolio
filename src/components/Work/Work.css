@@ -1,0 +1,23 @@
+#work-list {
+  list-style: none;
+}
+
+#work-list li {
+  position: relative;
+  border-left: 1px solid var(--primary-color);
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+}
+
+#work-list li::before {
+  content: "🏢";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  /* background-color: aliceblue; */
+  /* border: 5px solid var(--primary-color); */
+  /* border-radius: 50%; */
+  margin-right: 15px;
+  left: -12px;
+  top: 0px;
+}

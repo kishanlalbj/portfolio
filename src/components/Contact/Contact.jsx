@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./Contact.css";
-import ThemeContext from "../../context/ThemeContext";
+import ThemeContext from "@contexts/ThemeContext";
 import Title from "../ui/Title";
 
 const Contact = (props) => {
@@ -9,7 +9,7 @@ const Contact = (props) => {
   const { email } = props;
 
   return (
-    <section className="hidden" id="contact-me">
+    <section id="contact-me">
       <div className="hidden">
         <Title text="Contact Me"></Title>
       </div>
