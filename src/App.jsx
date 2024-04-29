@@ -59,7 +59,7 @@ function App() {
             skills={data.skills}
           />
 
-          <section className="work-and-achievements">
+          <section id="work" className="work-and-achievements">
             <Work works={data.works} />
 
             <Achievements achievements={data.achievements} />
