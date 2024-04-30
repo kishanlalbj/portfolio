@@ -8,7 +8,7 @@ const Skill = (props) => {
   const { skill } = props;
 
   return (
-    <div className={`skill ${!isDark ? "skill-light" : ""}`}>
+    <div className={`skill ${!isDark ? "skill-light" : ""} hidden`}>
       <img src={skill.logo} alt={skill.name} width={"24px"}></img>
       <p className="gradient-text">{skill.name}</p>
     </div>
@@ -30,7 +30,7 @@ const About = (props) => {
               <p key={para}>{para}</p>
             ))}
 
-            <div className="about-skills-container">
+            <div className="about-skills-container hidden">
               {skills?.map((skill) => (
                 <Skill key={skill.id} skill={skill} />
               ))}

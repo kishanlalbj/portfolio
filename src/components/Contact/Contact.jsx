@@ -25,7 +25,7 @@ const Contact = (props) => {
             href={`mailto:${email}`}
             className={`hero-cta ${!isDark ? "hero-cta-light" : ""}`}
           >
-            Let&apos;s Talk
+            Reach out
           </a>
         </div>
       </div>

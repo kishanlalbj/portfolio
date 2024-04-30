@@ -16,7 +16,7 @@
 }
 
 .achievements {
-  margin-top: 50px;
+  padding-top: 50px;
   display: flex;
   width: 100%;
   justify-content: space-around;
@@ -48,7 +48,7 @@
 }
 
 .about-skills-container {
-  margin-top: 50px;
+  padding-top: 50px;
   display: flex;
   align-items: center;
   gap: 24px;

@@ -1,24 +1,46 @@
 .achievements-list {
   list-style: none;
+  list-style-position: inside;
+  text-align: right;
 }
 
 .achievements-list li {
   position: relative;
-  border-left: 1px solid var(--primary-color);
+  border-right: 1px solid var(--primary-color);
   padding-bottom: 3rem;
-  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-.achievements-list li::before {
+.achievements-list li::after {
   content: url("../../assets/medal.svg");
   background-size: contain;
   position: absolute;
   margin-right: 15px;
-  left: -12px;
+  right: -28px;
   top: 0;
 }
 
 .achievements-link {
   text-decoration: none;
   color: inherit;
+}
+
+@media only screen and (max-width: 430px) {
+  .achievements-list {
+    list-style-position: unset;
+
+    text-align: left;
+  }
+
+  .achievements-list li {
+    border-left: 1px solid var(--primary-color);
+    border-right: unset;
+    padding-left: 2rem;
+  }
+
+  .achievements-list li::after {
+    margin-left: 15px;
+    right: unset;
+    left: -28px;
+  }
 }

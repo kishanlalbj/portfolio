@@ -10,7 +10,7 @@
   --primary-background-color: #333;
   --primary-text-color: #fff;
 
-  --light-primary-background-color: #f8f8f8;
+  --light-primary-background-color: #e7e7e7;
   --light-primary-text-color: #333;
   --light-ternary-color: rgb(249 250 251);
 }
@@ -18,8 +18,9 @@
 .light {
   background-color: #e7e7e7;
   color: var(--light-primary-text-color);
-  --primary-color: hsla(216, 96%, 56%, 1);
-  --secondary-color: hsla(178, 64%, 65%, 1);
+  --primary-color: rgba(0, 187, 248);
+  --secondary-color: rgba(0, 245, 212);
+
   --primary-text-color: #333;
 }
 
@@ -70,7 +71,7 @@ section {
 }
 
 .show {
-  animation: reveal 0.2s forwards;
+  animation: reveal 0.4s forwards;
 }
 
 .work-and-achievements {
@@ -79,6 +80,16 @@ section {
   align-items: flex-start;
   justify-content: space-between;
   gap: 48px;
+}
+
+@keyframes slowSpin {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes reveal {

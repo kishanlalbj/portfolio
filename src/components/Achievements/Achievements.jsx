@@ -4,7 +4,9 @@ import "./Achievements.css";
 const Achievements = ({ achievements }) => {
   return (
     <div className="hidden">
-      <Title text={"Achievements"}></Title>
+      <div style={{ textAlign: "right" }}>
+        <Title text={"Achievements"}></Title>
+      </div>
       <ul className="achievements-list">
         {achievements.map((a) => {
           return (

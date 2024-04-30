@@ -13,9 +13,9 @@ import "./App.css";
 import Achievements from "./components/Achievements/Achievements";
 
 function App() {
-  const [isDark, setDark] = useState(
-    localStorage.getItem("isDark") === "true" ? true : false
-  );
+  const localData = localStorage.getItem("isDark");
+
+  const [isDark, setDark] = useState();
 
   const [githubUrl, setGithubUrl] = useState("");
 
@@ -34,6 +34,11 @@ function App() {
   useEffect(() => {
     getGithubUrl();
   }, []);
+
+  useEffect(() => {
+    if (!localData) setDark(true);
+    else setDark(localData === "false" ? false : true);
+  }, [localData]);
 
   return (
     <ThemeContext.Provider value={{ isDark }}>
