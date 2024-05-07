@@ -59,7 +59,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 8px;
   background-color: var(--ternary-color);
   padding: 12px 16px;
   border-radius: 10px;

@@ -140,7 +140,7 @@
 
   .nav-mob-open {
     display: block;
-    position: fixed;
+    /* position: fixed; */
     right: 30px;
   }
 

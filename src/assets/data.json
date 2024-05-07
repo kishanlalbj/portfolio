@@ -68,6 +68,7 @@
       "id": 1,
       "company": "Oracle",
       "isPresent": true,
+      "from": "May 2021",
       "designation": "Project Lead",
       "place": "Bangalore"
     },
@@ -84,13 +85,22 @@
       "id": 3,
       "company": "Wipro Digital",
       "isPresent": false,
-      "to": "Dec 2020",
-      "from": "June 2016",
+      "to": "May 2019",
+      "from": "Dec 2020",
       "designation": "Senior Project Engineer",
       "place": "Bangalore"
     },
     {
       "id": 4,
+      "company": "Wipro Digital",
+      "isPresent": false,
+      "to": "May 2019",
+      "from": "June 2016",
+      "designation": "Project Engineer",
+      "place": "Bangalore"
+    },
+    {
+      "id": 5,
       "company": "Wipro Limited",
       "isPresent": false,
       "from": "Feb 2016",

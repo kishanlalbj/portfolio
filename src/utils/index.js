@@ -32,3 +32,14 @@ export const generateRandomPoint = () => {
     y: y
   };
 };
+
+
+export const ScrollToTopObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+       document.querySelector('#scrollToTop').style.display = 'block'
+    } else {
+      document.querySelector('#scrollToTop').style.display = 'none'    
+    }
+  })
+})

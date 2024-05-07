@@ -18,10 +18,12 @@ const Work = ({ works }) => {
                   </p>
                   <p> {w.designation}</p>
 
-                  {!w.isPresent && (
+                  {!w.isPresent ? (
                     <p>
                       {w.from}-{w.to}
                     </p>
+                  ) : (
+                    <p>{w.from} - Present</p>
                   )}
                 </div>
               </li>

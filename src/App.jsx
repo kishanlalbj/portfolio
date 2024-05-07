@@ -11,6 +11,8 @@ import useIntersectionObserver from "@hooks/useIntersectionObserver";
 import data from "./assets/data.json";
 import "./App.css";
 import Achievements from "./components/Achievements/Achievements";
+import ScrollToTop from "./components/ui/ScrollToTop";
+import { ScrollToTopObserver } from "./utils";
 
 function App() {
   const localData = localStorage.getItem("isDark");
@@ -40,9 +42,21 @@ function App() {
     else setDark(localData === "false" ? false : true);
   }, [localData]);
 
+  useEffect(() => {
+    const container = document.querySelectorAll("#container");
+
+    container?.forEach((e) => {
+      ScrollToTopObserver.observe(e);
+    });
+  }, []);
+
   return (
     <ThemeContext.Provider value={{ isDark }}>
-      <div className={!isDark ? "light" : "dark"}>
+      <div
+        id="app"
+        style={{ position: "absolute" }}
+        className={!isDark ? "light" : "dark"}
+      >
         <Navbar onSwitchTheme={handleSwitchTheme}></Navbar>
 
         <Hero
@@ -55,11 +69,11 @@ function App() {
           social={data.social}
         />
 
-        <div className="container">
+        <div id="container" className="container">
           <About
             aboutText={[
               data.personalDetails.aboutMe1,
-              data.personalDetails.aboutMe2
+              data.personalDetails.aboutMe2,
             ]}
             skills={data.skills}
           />
@@ -73,6 +87,8 @@ function App() {
           <Projects projects={data.projects} githubUrl={githubUrl} />
 
           <Contact />
+
+          <ScrollToTop />
         </div>
 
         <Footer />
