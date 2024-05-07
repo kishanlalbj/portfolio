@@ -9,13 +9,15 @@ import Footer from "@components/Footer/Footer";
 import ThemeContext from "@contexts/ThemeContext";
 import useIntersectionObserver from "@hooks/useIntersectionObserver";
 import data from "./assets/data.json";
-import "./App.css";
 import Achievements from "./components/Achievements/Achievements";
 import ScrollToTop from "./components/ui/ScrollToTop";
 import { ScrollToTopObserver } from "./utils";
+import "./App.css";
+import Loader from "./components/ui/Loader";
 
 function App() {
   const localData = localStorage.getItem("isDark");
+  const [loading, setLoading] = useState(true);
 
   const [isDark, setDark] = useState();
 
@@ -34,65 +36,76 @@ function App() {
   useIntersectionObserver();
 
   useEffect(() => {
-    getGithubUrl();
-  }, []);
-
-  useEffect(() => {
     if (!localData) setDark(true);
     else setDark(localData === "false" ? false : true);
   }, [localData]);
 
   useEffect(() => {
+    getGithubUrl();
+
     const container = document.querySelectorAll("#container");
 
     container?.forEach((e) => {
       ScrollToTopObserver.observe(e);
     });
+
+    // Not actually loading anything, just for decorative purpose only
+    let timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
     <ThemeContext.Provider value={{ isDark }}>
-      <div
-        id="app"
-        style={{ position: "absolute" }}
-        className={!isDark ? "light" : "dark"}
-      >
-        <Navbar onSwitchTheme={handleSwitchTheme}></Navbar>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div
+          id="app"
+          style={{ position: "absolute" }}
+          className={!isDark ? "light" : "dark"}
+        >
+          <Navbar onSwitchTheme={handleSwitchTheme}></Navbar>
 
-        <Hero
-          firstName={data.personalDetails.firstName}
-          lastName={data.personalDetails.lastName}
-          workTitle={data.personalDetails.workTitle}
-          image={data.personalDetails.profileImg}
-          heroText={data.personalDetails.shortIntro}
-          resume={data.personalDetails.resume}
-          social={data.social}
-        />
-
-        <div id="container" className="container">
-          <About
-            aboutText={[
-              data.personalDetails.aboutMe1,
-              data.personalDetails.aboutMe2,
-            ]}
-            skills={data.skills}
+          <Hero
+            firstName={data.personalDetails.firstName}
+            lastName={data.personalDetails.lastName}
+            workTitle={data.personalDetails.workTitle}
+            image={data.personalDetails.profileImg}
+            heroText={data.personalDetails.shortIntro}
+            resume={data.personalDetails.resume}
+            social={data.social}
           />
 
-          <section id="work" className="work-and-achievements">
-            <Work works={data.works} />
+          <div id="container" className="container">
+            <About
+              aboutText={[
+                data.personalDetails.aboutMe1,
+                data.personalDetails.aboutMe2,
+              ]}
+              skills={data.skills}
+            />
 
-            <Achievements achievements={data.achievements} />
-          </section>
+            <section id="work" className="work-and-achievements">
+              <Work works={data.works} />
 
-          <Projects projects={data.projects} githubUrl={githubUrl} />
+              <Achievements achievements={data.achievements} />
+            </section>
 
-          <Contact />
+            <Projects projects={data.projects} githubUrl={githubUrl} />
 
-          <ScrollToTop />
+            <Contact />
+
+            <ScrollToTop />
+          </div>
+
+          <Footer />
         </div>
-
-        <Footer />
-      </div>
+      )}
     </ThemeContext.Provider>
   );
 }

@@ -8,7 +8,7 @@ const useIntersectionObserver = () => {
     hiddenElements.forEach((e) => {
       observer.observe(e);
     });
-  }, []);
+  });
 };
 
 export default useIntersectionObserver;
