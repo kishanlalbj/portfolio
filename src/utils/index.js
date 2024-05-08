@@ -36,6 +36,7 @@ export const generateRandomPoint = () => {
 
 export const ScrollToTopObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
+    console.log(entry.isIntersecting)
     if(entry.isIntersecting) {
        document.querySelector('#scrollToTop').style.display = 'block'
     } else {

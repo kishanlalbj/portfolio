@@ -7,13 +7,13 @@ import Projects from "@components/Projects/Projects";
 import Work from "@components/Work/Work";
 import Footer from "@components/Footer/Footer";
 import ThemeContext from "@contexts/ThemeContext";
-import useIntersectionObserver from "@hooks/useIntersectionObserver";
+import useAnimateOnScroll from "@hooks/useAnimateOnScroll";
 import data from "./assets/data.json";
 import Achievements from "./components/Achievements/Achievements";
 import ScrollToTop from "./components/ui/ScrollToTop";
-import { ScrollToTopObserver } from "./utils";
-import "./App.css";
 import Loader from "./components/ui/Loader";
+import "./App.css";
+import useScrollToTop from "./hooks/useScrollToTop";
 
 function App() {
   const localData = localStorage.getItem("isDark");
@@ -33,7 +33,7 @@ function App() {
     setGithubUrl(url);
   };
 
-  useIntersectionObserver();
+  useAnimateOnScroll();
 
   useEffect(() => {
     if (!localData) setDark(true);
@@ -42,13 +42,6 @@ function App() {
 
   useEffect(() => {
     getGithubUrl();
-
-    const container = document.querySelectorAll("#container");
-
-    container?.forEach((e) => {
-      ScrollToTopObserver.observe(e);
-    });
-
     // Not actually loading anything, just for decorative purpose only
     let timer = setTimeout(() => {
       setLoading(false);
@@ -58,6 +51,8 @@ function App() {
       clearTimeout(timer);
     };
   }, []);
+
+  useScrollToTop();
 
   return (
     <ThemeContext.Provider value={{ isDark }}>

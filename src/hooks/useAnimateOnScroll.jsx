@@ -1,7 +1,7 @@
 import observer from "@utils/observer.js";
 import { useEffect } from "react";
 
-const useIntersectionObserver = () => {
+const useAnimateOnScroll = () => {
   useEffect(() => {
     const hiddenElements = document.querySelectorAll(".hidden");
 
@@ -11,4 +11,4 @@ const useIntersectionObserver = () => {
   });
 };
 
-export default useIntersectionObserver;
+export default useAnimateOnScroll;
