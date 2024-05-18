@@ -80,7 +80,7 @@ function App() {
             <About
               aboutText={[
                 data.personalDetails.aboutMe1,
-                data.personalDetails.aboutMe2,
+                data.personalDetails.aboutMe2
               ]}
               skills={data.skills}
             />
@@ -93,7 +93,7 @@ function App() {
 
             <Projects projects={data.projects} githubUrl={githubUrl} />
 
-            <Contact />
+            <Contact email={data?.personalDetails?.email} />
 
             <ScrollToTop />
           </div>
