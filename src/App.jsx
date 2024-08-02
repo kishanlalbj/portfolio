@@ -15,7 +15,7 @@ import Loader from "./components/ui/Loader";
 import "./App.css";
 import useScrollToTop from "./hooks/useScrollToTop";
 
-function App() {
+function App() { 
   const localData = localStorage.getItem("isDark");
   const [loading, setLoading] = useState(true);
 
