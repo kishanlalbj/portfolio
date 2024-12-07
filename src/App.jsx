@@ -11,13 +11,11 @@ import useAnimateOnScroll from "@hooks/useAnimateOnScroll";
 import data from "./assets/data.json";
 import Achievements from "./components/Achievements/Achievements";
 import ScrollToTop from "./components/ui/ScrollToTop";
-import Loader from "./components/ui/Loader";
 import "./App.css";
 import useScrollToTop from "./hooks/useScrollToTop";
 
-function App() { 
+function App() {
   const localData = localStorage.getItem("isDark");
-  const [loading, setLoading] = useState(true);
 
   const [isDark, setDark] = useState();
 
@@ -42,65 +40,53 @@ function App() {
 
   useEffect(() => {
     getGithubUrl();
-    // Not actually loading anything, just for decorative purpose only
-    let timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-
-    return () => {
-      clearTimeout(timer);
-    };
   }, []);
 
   useScrollToTop();
 
   return (
     <ThemeContext.Provider value={{ isDark }}>
-      {loading ? (
-        <Loader />
-      ) : (
-        <div
-          id="app"
-          style={{ position: "absolute" }}
-          className={!isDark ? "light" : "dark"}
-        >
-          <Navbar onSwitchTheme={handleSwitchTheme}></Navbar>
+      <div
+        id="app"
+        style={{ position: "absolute" }}
+        className={!isDark ? "light" : "dark"}
+      >
+        <Navbar onSwitchTheme={handleSwitchTheme}></Navbar>
 
-          <Hero
-            firstName={data.personalDetails.firstName}
-            lastName={data.personalDetails.lastName}
-            workTitle={data.personalDetails.workTitle}
-            image={data.personalDetails.profileImg}
-            heroText={data.personalDetails.shortIntro}
-            resume={data.personalDetails.resume}
-            social={data.social}
+        <Hero
+          firstName={data.personalDetails.firstName}
+          lastName={data.personalDetails.lastName}
+          workTitle={data.personalDetails.workTitle}
+          image={data.personalDetails.profileImg}
+          heroText={data.personalDetails.shortIntro}
+          resume={data.personalDetails.resume}
+          social={data.social}
+        />
+
+        <div id="container" className="container">
+          <About
+            aboutText={[
+              data.personalDetails.aboutMe1,
+              data.personalDetails.aboutMe2
+            ]}
+            skills={data.skills}
           />
 
-          <div id="container" className="container">
-            <About
-              aboutText={[
-                data.personalDetails.aboutMe1,
-                data.personalDetails.aboutMe2
-              ]}
-              skills={data.skills}
-            />
+          <section id="work" className="work-and-achievements">
+            <Work works={data.works} />
 
-            <section id="work" className="work-and-achievements">
-              <Work works={data.works} />
+            <Achievements achievements={data.achievements} />
+          </section>
 
-              <Achievements achievements={data.achievements} />
-            </section>
+          <Projects projects={data.projects} githubUrl={githubUrl} />
 
-            <Projects projects={data.projects} githubUrl={githubUrl} />
+          <Contact email={data?.personalDetails?.email} />
 
-            <Contact email={data?.personalDetails?.email} />
-
-            <ScrollToTop />
-          </div>
-
-          <Footer />
+          <ScrollToTop />
         </div>
-      )}
+
+        <Footer />
+      </div>
     </ThemeContext.Provider>
   );
 }

@@ -19,13 +19,8 @@
     },
     {
       "id": 2,
-      "name": "HTML5",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-    },
-    {
-      "id": 3,
-      "name": "CSS3",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
+      "name": "NextJS",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
     },
     {
       "id": 4,
@@ -56,19 +51,24 @@
       "id": 8,
       "name": "Docker",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg"
-    },
-    {
-      "id": 10,
-      "name": "Java",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
     }
   ],
   "works": [
     {
+      "id": 5,
+      "company": "Wipro Limited",
+      "isPresent": true,
+      "from": "Oct, 2024",
+      "to": "",
+      "designation": "Technical Lead",
+      "place": "Bangalore"
+    },
+    {
       "id": 1,
       "company": "Oracle",
-      "isPresent": true,
+      "isPresent": false,
       "from": "May 2021",
+      "to": "Oct 2024",
       "designation": "Project Lead",
       "place": "Bangalore"
     },
@@ -98,15 +98,6 @@
       "from": "June 2016",
       "designation": "Project Engineer",
       "place": "Bangalore"
-    },
-    {
-      "id": 5,
-      "company": "Wipro Limited",
-      "isPresent": false,
-      "from": "Feb 2016",
-      "to": "May 2016",
-      "designation": "Project Intern",
-      "place": "Hyderabad"
     }
   ],
   "projects": [
@@ -136,15 +127,6 @@
       "techStack": ["HTML", "CSS", "Javascript"],
       "liveUrl": "https://fm-password-generator.netlify.app",
       "sourceUrl": "https://github.com/kishanlalbj/password-generator"
-    },
-    {
-      "id": 3,
-      "title": "Crowdfunding app",
-      "image": "proj-3.png",
-      "description": "A simple crowd funding app for products",
-      "techStack": ["HTML", "CSS", "Javascript"],
-      "liveUrl": "https://laughing-kalam-667abd.netlify.app/",
-      "sourceUrl": "https://github.com/kishanlalbj/crowdfund-fronendmentor"
     }
   ],
   "social": [

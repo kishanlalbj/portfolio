@@ -7,7 +7,7 @@
   --secondary-color: #978d6b;
 
   --ternary-color: #28282b;
-  --primary-background-color: #333;
+  --primary-background-color: #1c1c1c;
   --primary-text-color: #fff;
 
   --light-primary-background-color: #fff;
@@ -18,8 +18,8 @@
 .light {
   background-color: var(--light-primary-background-color);
   color: var(--light-primary-text-color);
-  --primary-color: rgb(248, 37, 0);
-  --secondary-color: rgb(245, 135, 0);
+  --primary-color: rgb(24, 3, 53);
+  --secondary-color: rgb(170, 34, 201);
   --primary-text-color: #333;
 }
 

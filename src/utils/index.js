@@ -33,14 +33,12 @@ export const generateRandomPoint = () => {
   };
 };
 
-
 export const ScrollToTopObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    console.log(entry.isIntersecting)
-    if(entry.isIntersecting) {
-       document.querySelector('#scrollToTop').style.display = 'block'
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      document.querySelector("#scrollToTop").style.display = "block";
     } else {
-      document.querySelector('#scrollToTop').style.display = 'none'    
+      document.querySelector("#scrollToTop").style.display = "none";
     }
-  })
-})
+  });
+});
