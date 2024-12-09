@@ -2,6 +2,7 @@ import { memo, useContext } from "react";
 import "./Projects.css";
 import ThemeContext from "@contexts/ThemeContext";
 import Title from "../ui/Title";
+import { track } from "@vercel/analytics/react";
 
 let Projects = (props) => {
   const { isDark } = useContext(ThemeContext);
@@ -43,11 +44,24 @@ let Projects = (props) => {
                 </div>
 
                 <div className="project-actions-container">
-                  <a href={project?.sourceUrl} target="_blank" className="icon">
+                  <a
+                    href={project?.sourceUrl}
+                    target="_blank"
+                    className="icon"
+                    title={`${project.title}-gitlink`}
+                    onClick={() =>
+                      track("View Project", { project: project.title })
+                    }
+                  >
                     <i className="fa-brands fa-github fa-lg" color="#fff"></i>
                   </a>
 
-                  <a href={project?.liveUrl} target="_blank" className="icon">
+                  <a
+                    href={project?.liveUrl}
+                    title={`${project?.liveUrl}-projectlink`}
+                    target="_blank"
+                    className="icon"
+                  >
                     <i
                       className="fa-solid fa-up-right-from-square"
                       color="#fff"

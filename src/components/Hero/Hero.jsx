@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import "./Hero.css";
 import ThemeContext from "@contexts/ThemeContext";
 import useConfetti from "@hooks/useConfetti";
+import { track } from "@vercel/analytics/react";
 
 const Hero = (props) => {
   const { isDark } = useContext(ThemeContext);
@@ -72,7 +73,11 @@ const Hero = (props) => {
                 key={e.id}
                 href={e.url}
                 target="_blank"
+                onClick={() =>
+                  track("Social", { location: "hero", name: e.name })
+                }
                 className="icon gradient-text"
+                title={e.name}
                 rel="noopener noreferrer"
               >
                 <i className={`fa-brands fa-${e.name} fa-xl`} />
@@ -83,6 +88,7 @@ const Hero = (props) => {
           <div className="hero-action">
             <a
               href={`${resume}`}
+              onClick={() => track("View Resume")}
               target="_blank"
               className={`hero-cta ${!isDark ? "hero-cta-light" : ""}`}
             >

@@ -16,3 +16,7 @@ footer {
 footer p {
   font-size: 16px;
 }
+
+.author-link {
+  color: var(--secondary-color);
+}
