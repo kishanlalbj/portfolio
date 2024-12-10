@@ -105,7 +105,7 @@
       "id": 4,
       "title": "Music Player",
       "image": "proj-4.png",
-      "techStack": ["React", "Node", "MongoDB", "ExpressJS"],
+      "techStack": ["React", "Node", "MongoDB", "ExpressJS", "AWS S3"],
       "description": "A Music player application to enjoy listening to your musics",
       "liveUrl": "",
       "sourceUrl": "https://github.com/kishanlalbj/music-player"
@@ -127,6 +127,15 @@
       "techStack": ["HTML", "CSS", "Javascript"],
       "liveUrl": "https://fm-password-generator.netlify.app",
       "sourceUrl": "https://github.com/kishanlalbj/password-generator"
+    },
+    {
+      "id": 3,
+      "title": "Windows Downloads Organizer",
+      "image": "",
+      "description": "A CLI tool to easily organize files in windows downloads folder",
+      "techStack": ["Nodejs"],
+      "liveUrl": "https://www.npmjs.com/package/win-downloads-organizer",
+      "sourceUrl": "https://github.com/kishanlalbj/win-downloads-organizer"
     }
   ],
   "social": [
