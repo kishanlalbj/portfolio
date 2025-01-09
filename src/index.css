@@ -18,8 +18,8 @@
 .light {
   background-color: var(--light-primary-background-color);
   color: var(--light-primary-text-color);
-  --primary-color: rgb(24, 3, 53);
-  --secondary-color: rgb(170, 34, 201);
+  --primary-color: rgb(226, 102, 102);
+  --secondary-color: rgb(239, 11, 11);
   --primary-text-color: #333;
 }
 
@@ -191,6 +191,6 @@ section {
 
 @media only screen and (min-width: 1921px) {
   .container {
-    width: 40%;
+    width: 60%;
   }
 }

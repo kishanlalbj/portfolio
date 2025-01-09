@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import About from "@components/About/About";
 import Contact from "@components/Contact/Contact";
 import Hero from "@components/Hero/Hero";
@@ -15,16 +15,10 @@ import "./App.css";
 import useScrollToTop from "./hooks/useScrollToTop";
 
 function App() {
+  const { isDark, setIsDark } = useContext(ThemeContext);
+
   const localData = localStorage.getItem("isDark");
-
-  const [isDark, setDark] = useState();
-
   const [githubUrl, setGithubUrl] = useState("");
-
-  const handleSwitchTheme = () => {
-    localStorage.setItem("isDark", !isDark);
-    setDark((prev) => !prev);
-  };
 
   const getGithubUrl = () => {
     const url = data.social.find((e) => e.name == "github")?.url;
@@ -34,9 +28,9 @@ function App() {
   useAnimateOnScroll();
 
   useEffect(() => {
-    if (!localData) setDark(true);
-    else setDark(localData === "false" ? false : true);
-  }, [localData]);
+    if (!localData) setIsDark(true);
+    else setIsDark(localData === "false" ? false : true);
+  }, [localData, setIsDark]);
 
   useEffect(() => {
     getGithubUrl();
@@ -45,13 +39,13 @@ function App() {
   useScrollToTop();
 
   return (
-    <ThemeContext.Provider value={{ isDark }}>
+    <>
       <div
         id="app"
         style={{ position: "absolute" }}
         className={!isDark ? "light" : "dark"}
       >
-        <Navbar onSwitchTheme={handleSwitchTheme}></Navbar>
+        <Navbar />
 
         <Hero
           firstName={data.personalDetails.firstName}
@@ -87,7 +81,7 @@ function App() {
 
         <Footer />
       </div>
-    </ThemeContext.Provider>
+    </>
   );
 }
 

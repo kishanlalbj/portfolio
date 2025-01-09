@@ -1,9 +1,13 @@
+import { useContext } from "react";
+import ThemeContext from "../../context/ThemeContext";
 import "./Footer.css";
 
 const Footer = () => {
+  const { isDark } = useContext(ThemeContext);
+
   return (
-    <footer>
-      <div className="container footer-container">
+    <footer className={`${!isDark ? "project-light" : ""}`}>
+      <div className={`container footer-container  `}>
         <p> &copy; {new Date().getFullYear()}</p>
         <p>
           developed by{" "}

@@ -2,9 +2,13 @@ import "./Navbar.css";
 import { useContext, useRef } from "react";
 import ThemeContext from "@contexts/ThemeContext";
 
-const Navbar = (props) => {
-  const { onSwitchTheme } = props;
-  const { isDark } = useContext(ThemeContext);
+const Navbar = () => {
+  const { isDark, setIsDark } = useContext(ThemeContext);
+
+  const onSwitchTheme = () => {
+    setIsDark((prev) => !prev);
+    localStorage.setItem("isDark", !isDark);
+  };
 
   const menuRef = useRef();
 
