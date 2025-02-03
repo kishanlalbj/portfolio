@@ -23,8 +23,6 @@ const About = (props) => {
       <div className="about-wrapper">
         <Title text={"About me"} className="hidden" />
         <div className="about-grid">
-          <div className="profile-img"></div>
-
           <div className="about-text-container hidden">
             {aboutText.map((para) => (
               <p key={para}>{para}</p>
