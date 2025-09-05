@@ -7,7 +7,7 @@
     "shortIntro": "A seasoned full stack developer with over 9 years of experience in creating web applications for the world",
     "yearsOfExperience": 9,
     "resume": "resume.pdf",
-    "profileImg": "me.jpg",
+    "profileImg": "me.jpeg",
     "aboutMe1": "I'm a passionate MERN stack developer dedicated to crafting robust and user-centric web applications. With a solid foundation in MongoDB, Express.js, React.js, and Node.js, I thrive on bringing ideas to life through clean, efficient code and intuitive user experiences.",
     "aboutMe2": "Proficient in leveraging tools like Docker to containerize MERN applications and deploying containerized apps to clouds like AWS and Azure."
   },
@@ -58,7 +58,7 @@
       "id": 5,
       "company": "Wipro Limited",
       "isPresent": true,
-      "from": "Oct, 2024",
+      "from": "Oct 2024",
       "to": "",
       "designation": "Technical Lead",
       "place": "Bangalore"

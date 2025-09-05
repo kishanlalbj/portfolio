@@ -1,0 +1,45 @@
+.chat-page-container {
+  position: relative;
+  height: calc(100vh - 4rem);
+}
+
+.chat-container {
+  margin: 56px auto 0 auto;
+  max-width: 650px;
+}
+
+.chat-input {
+  background-color: #3e3e3e;
+  padding: 12px 26px;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3e3e3e;
+  color: white;
+}
+
+.chat-subtitle {
+  margin: 36px 0;
+  text-align: center;
+}
+
+.chat-answer-container {
+  margin-top: 24px;
+}
+
+.chat-response-loading {
+  margin-top: 24px;
+  color: #34d399;
+  font-size: 16px;
+  font-style: italic;
+  animation: blink-text 1s infinite;
+}
+
+@keyframes blink-text {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
