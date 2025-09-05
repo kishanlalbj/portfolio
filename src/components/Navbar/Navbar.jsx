@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import { useContext, useRef } from "react";
 import ThemeContext from "@contexts/ThemeContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { isDark, setIsDark } = useContext(ThemeContext);
@@ -19,11 +20,11 @@ const Navbar = () => {
   return (
     <div className={`navbar ${!isDark ? "navbar-light" : ""}`}>
       <div className="container">
-        <a href="#" className="logo">
+        <Link to="/" className="logo">
           <h4 className="logo-text">
             kishanlalbj.<span className="gradient-text">dev</span>
           </h4>
-        </a>
+        </Link>
 
         <span className="nav-mob-open" onClick={handleOpen}>
           <i className="fa-solid fa-bars"></i>

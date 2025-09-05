@@ -3,6 +3,7 @@ import "./Hero.css";
 import ThemeContext from "@contexts/ThemeContext";
 import useConfetti from "@hooks/useConfetti";
 import { track } from "@vercel/analytics/react";
+import { Link } from "react-router-dom";
 
 const Hero = (props) => {
   const { isDark } = useContext(ThemeContext);
@@ -86,6 +87,10 @@ const Hero = (props) => {
           </div>
 
           <div className="hero-action">
+            <Link to="/chat" className="btn-secondary">
+              Chat
+            </Link>
+
             <a
               href={`${resume}`}
               onClick={() => track("View Resume")}
