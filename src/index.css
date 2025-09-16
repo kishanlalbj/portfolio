@@ -13,6 +13,7 @@
   --light-primary-background-color: #fff;
   --light-primary-text-color: #333;
   --light-ternary-color: rgb(249 250 251);
+  --gpt-response-color: #4ade80;
 }
 
 .light {
@@ -21,6 +22,7 @@
   --primary-color: rgb(226, 102, 102);
   --secondary-color: rgb(239, 11, 11);
   --primary-text-color: #333;
+  --gpt-response-color: #166534;
 }
 
 * {
@@ -31,7 +33,7 @@
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -185,12 +187,12 @@ section {
 
 @media only screen and (min-width: 1441px) and (max-width: 1920px) {
   .container {
-    width: 70%;
+    width: 80%;
   }
 }
 
 @media only screen and (min-width: 1921px) {
   .container {
-    width: 60%;
+    width: 70%;
   }
 }
