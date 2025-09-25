@@ -1,4 +1,4 @@
-import { BriefcaseBusinessIcon, FileTextIcon, MapPinIcon } from "lucide-react";
+import { BriefcaseBusinessIcon, MapPinIcon } from "lucide-react";
 import { motion, stagger } from "motion/react";
 import StarFieldPulse from "./Star";
 import Navbar from "./Navbar";
@@ -51,9 +51,9 @@ const Hero = () => {
             >
               <motion.h1
                 variants={item}
-                className="text-lg md:text-4xl font-bold my-4"
+                className="text-lg md:text-4xl font-bold my-4 tracking-tight"
               >
-                Hello, I am{" "}
+                Hey, I am{" "}
                 <span className="text-primary underline underline-offset-8">
                   Kishan
                 </span>
@@ -77,15 +77,28 @@ const Hero = () => {
               </motion.div>
 
               <motion.div variants={item} className="mt-4">
-                <a
-                  role="button"
-                  href="/resume.pdf"
-                  target="_blank"
-                  className="inline-flex items-center gap-2 px-4 py-3 border-transparent hover:text-white hover:bg-transparent hover:border hover:border-primary"
-                >
-                  <FileTextIcon />
-                  Resume
-                </a>
+                <ul className="inline-flex items-center gap-6">
+                  <li>
+                    <a
+                      href="https://linkedin.com/in/kishanlalbj"
+                      target="_blank"
+                    >
+                      <i className="fa-brands fa-linkedin text-3xl"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="https://github.com/kishanlalbj" target="_blank">
+                      <i className="fa-brands fa-github text-3xl"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="mailto:kishanlalbj@gmail.com" target="_blank">
+                      <i className="fa fa-envelope text-3xl"></i>
+                    </a>
+                  </li>
+                </ul>
               </motion.div>
             </motion.div>
           </div>

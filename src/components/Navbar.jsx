@@ -18,14 +18,47 @@ const Navbar = () => {
         <nav className="hidden md:block">
           <ul className="inline-flex items-center gap-6">
             <li>
-              <a href="https://linkedin.com/in/kishanlalbj" target="_blank">
-                <i className="fa-brands fa-linkedin text-3xl"></i>
+              <a
+                href="#"
+                className="hover:underline hover:underline-offset-8 hover:text-primary"
+              >
+                Home
               </a>
             </li>
 
             <li>
-              <a href="https://github.com/kishanlalbj" target="_blank">
-                <i className="fa-brands fa-github text-3xl"></i>
+              <a
+                href="#about"
+                className="hover:underline hover:underline-offset-8 hover:text-primary"
+              >
+                About
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#work"
+                className="hover:underline hover:underline-offset-8 hover:text-primary"
+              >
+                Work
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#projects"
+                className="hover:underline hover:underline-offset-8 hover:text-primary"
+              >
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#contact-me"
+                className="hover:underline hover:underline-offset-8 hover:text-primary"
+              >
+                Contact
               </a>
             </li>
           </ul>
