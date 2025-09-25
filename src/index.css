@@ -1,198 +1,46 @@
-:root {
-  /* --primary-color: rgba(0, 187, 248);
-  --secondary-color: rgba(0, 245, 212); */
-  /* 706e5c */
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import "tailwindcss";
 
-  --primary-color: #b5ad97;
-  --secondary-color: #978d6b;
-
-  --ternary-color: #28282b;
-  --primary-background-color: #1c1c1c;
-  --primary-text-color: #fff;
-
-  --light-primary-background-color: #fff;
-  --light-primary-text-color: #333;
-  --light-ternary-color: rgb(249 250 251);
-  --gpt-response-color: #4ade80;
+@theme {
+  --font-source-code: "Source Code Pro", sans-serif;
+  --color-primary: #f6f1d5;
+  --color-space: #0e0e0e;
+  --color-secondary: #27272a;
 }
 
-.light {
-  background-color: var(--light-primary-background-color);
-  color: var(--light-primary-text-color);
-  --primary-color: rgb(226, 102, 102);
-  --secondary-color: rgb(239, 11, 11);
-  --primary-text-color: #333;
-  --gpt-response-color: #166534;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
-
-body {
-  font-family: Source Code Pro, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--primary-background-color);
-  color: var(--primary-text-color);
-  font-size: 18px;
-}
-
-section {
-  margin-top: 130px;
-}
-
-.gradient-text {
-  background: linear-gradient(
-    to left,
-
-    var(--secondary-color) 10%,
-    var(--primary-color) 70%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.icon {
-  text-decoration: none;
-  color: inherit;
-}
-
-.hidden {
-  opacity: 0;
-  transform: translateY(200px);
-  filter: blur(4px);
-}
-
-.show {
-  animation: reveal 0.4s forwards;
-}
-
-.work-and-achievements {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 48px;
-}
-
-@keyframes slowSpin {
-  from {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(200px);
-    filter: blur(4px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-    filter: blur(0);
-  }
-}
-
-@media (prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
-}
-
-@keyframes fall-1 {
-  0% {
-    transform: translate(0px, 0px) rotateX(60deg) rotateY(10deg) rotateZ(0deg)
-      scale(0.25);
-    opacity: 1;
-  }
-
-  5% {
-    transform: translate(10px, -10px) rotateX(45deg) rotateY(30deg)
-      rotateZ(0deg) scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(25px, 200px) rotateX(180deg) rotateY(270deg)
-      rotateZ(90deg) scale(1);
-    opacity: 0.3;
-  }
-}
-
-@keyframes fall-2 {
-  0% {
-    transform: translate(0px, 0px) rotateX(-30deg) rotateY(20deg) scale(0.25);
-    opacity: 0;
-  }
-
-  10% {
-    transform: translate(-10px, -5px) rotateX(-30deg) rotateY(20deg) scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(-10px, 160px) rotateX(-120deg) rotateY(65deg)
-      scale(0.25);
-    opacity: 0;
-  }
-}
-
-@keyframes fall-3 {
-  0% {
-    transform: translate(0px, 0px) rotateX(0deg) rotateY(45deg) scale(0.5);
-    opacity: 0;
-  }
-
-  15% {
-    transform: translate(7px, 5px) rotateX(0deg) rotateY(45deg) scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(20px, 120px) rotateX(-180deg) rotateY(-90deg)
-      scale(0.5);
-    opacity: 0;
-  }
-}
-
-@media only screen and (max-width: 431px) {
-  .work-and-achievements {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media only screen and (max-width: 786px) {
-  .container {
-    width: 90%;
-  }
-
+@layer base {
   body {
-    font-size: 16px;
+    @apply font-source-code bg-space text-lg;
+
+    color: white;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-@media only screen and (min-width: 1441px) and (max-width: 1920px) {
-  .container {
-    width: 80%;
+@layer components {
+  button,
+  a[role="button"] {
+    @apply p-2 rounded text-black cursor-pointer bg-primary;
+  }
+
+  button:hover,
+  a[role="button"]:hover {
+    @apply bg-amber-100;
+  }
+
+  section {
+    @apply my-16;
   }
 }
 
-@media only screen and (min-width: 1921px) {
-  .container {
-    width: 70%;
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse {
+    animation: none !important;
+  }
+  [style*="animation: shoot"] {
+    animation: none !important;
   }
 }

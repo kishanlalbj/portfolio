@@ -8,14 +8,13 @@
     "yearsOfExperience": 9,
     "resume": "resume.pdf",
     "profileImg": "me.jpeg",
-    "aboutMe1": "I'm a passionate MERN stack developer dedicated to crafting robust and user-centric web applications. With a solid foundation in MongoDB, Express.js, React.js, and Node.js, I thrive on bringing ideas to life through clean, efficient code and intuitive user experiences.",
-    "aboutMe2": "Proficient in leveraging tools like Docker to containerize MERN applications and deploying containerized apps to clouds like AWS and Azure."
+    "aboutMe1": "I'm a MERN stack developer dedicated to crafting robust and user-centric web applications. I work on bringing ideas to life through clean, efficient code and deploy them in cloud."
   },
   "skills": [
     {
       "id": 1,
-      "name": "JavaScript",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+      "name": "TypeScript",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
     },
     {
       "id": 2,
@@ -25,12 +24,12 @@
     {
       "id": 4,
       "name": "ReactJS",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
     },
     {
       "id": 5,
       "name": "NodeJS",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain.svg"
     },
     {
       "id": 6,
@@ -50,7 +49,12 @@
     {
       "id": 8,
       "name": "Docker",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg"
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg"
+    },
+    {
+      "id": 9,
+      "name": "Python",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
     }
   ],
   "works": [
@@ -82,19 +86,10 @@
       "place": "Bangalore"
     },
     {
-      "id": 3,
-      "company": "Wipro Digital",
-      "isPresent": false,
-      "to": "Dec 2020",
-      "from": "May 2019",
-      "designation": "Senior Project Engineer",
-      "place": "Bangalore"
-    },
-    {
       "id": 4,
       "company": "Wipro Digital",
       "isPresent": false,
-      "to": "May 2019",
+      "to": "Dev 2020",
       "from": "June 2016",
       "designation": "Project Engineer",
       "place": "Bangalore"
@@ -122,7 +117,7 @@
     {
       "id": 3,
       "title": "Windows Downloads Organizer",
-      "image": "",
+      "image": "proj-5.png",
       "description": "A CLI tool to easily organize files in windows downloads folder",
       "techStack": ["Nodejs"],
       "liveUrl": "https://www.npmjs.com/package/win-downloads-organizer",
