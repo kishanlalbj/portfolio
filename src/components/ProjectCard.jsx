@@ -8,7 +8,14 @@ const ProjectCard = ({ title, image, techStack, description }) => {
       <div className="p-4">
         <p>{description}</p>
 
-        <p className="my-4">{techStack?.join(", ")}</p>
+        <div className="flex items-center gap-3 flex-wrap my-4">
+          {Array.isArray(techStack) &&
+            techStack.map((s) => (
+              <p key={s} className="px-2 text-sm rounded-lg bg-secondary">
+                {s}
+              </p>
+            ))}
+        </div>
       </div>
     </div>
   );

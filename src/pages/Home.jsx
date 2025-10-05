@@ -3,13 +3,32 @@ import { motion } from "motion/react";
 import Skill from "../components/Skill";
 import { useEffect, useState } from "react";
 import WorkCard from "../components/WorkCard";
-import { MailIcon } from "lucide-react";
+import { ArrowUp, MailIcon } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 import Title from "../components/Title";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 const Home = () => {
   const [data, setData] = useState({});
+
+  const listVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        when: "beforeChildren"
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 16 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } }
+  };
+
+  useScrollToTop();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,11 +42,18 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="relative">
       <Hero />
 
-      <section>
-        <motion.div className="container mx-auto px-4 max-w-6xl" id="about">
+      <section id="about-section">
+        <motion.div
+          variants={listVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.6 }}
+          className="container mx-auto px-4 max-w-6xl"
+          id="about"
+        >
           <Title name={"About"} />
 
           <p className="text-lg leading-8">{data?.personalDetails?.aboutMe1}</p>
@@ -40,39 +66,83 @@ const Home = () => {
 
       <section>
         <div className="container mx-auto px-4 max-w-6xl my-25">
-          <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <motion.ul
+            variants={listVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.6 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          >
             {data?.skills?.map((skill, index) => (
-              <Skill
+              <motion.li
                 key={skill.id}
-                img={skill.logo}
-                name={skill.name}
-                index={index}
-              ></Skill>
+                variants={itemVariants}
+                className="focus:outline-none w-full"
+              >
+                <Skill img={skill.logo} name={skill.name} index={index} />
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       </section>
 
       <section>
-        <div className="container mx-auto px-4 max-w-6xl my-25" id="work">
+        <motion.div
+          variants={listVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.6 }}
+          className="container mx-auto px-4 max-w-6xl my-25"
+          id="work"
+        >
           <Title name="Work" />
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {data?.works?.map((work, index) => (
-              <WorkCard key={work.id} index={index} {...work}></WorkCard>
+              <motion.li
+                key={work.id}
+                variants={itemVariants}
+                className="focus:outline-none"
+              >
+                <WorkCard key={work.id} index={index} {...work}></WorkCard>
+              </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </section>
 
       <section>
-        <div className="container mx-auto px-4 max-w-6xl my-25" id="projects">
-          <Title name="Project" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <motion.div
+          variants={listVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.6 }}
+          className="container mx-auto px-4 max-w-6xl my-25"
+          id="projects"
+        >
+          <Title name="Projects" />
+          <motion.ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {data?.projects?.map((project, index) => (
-              <ProjectCard key={project.id} index={index} {...project} />
+              <motion.li
+                key={project.id}
+                variants={itemVariants}
+                className="focus:outline-none"
+              >
+                <ProjectCard key={project.id} index={index} {...project} />
+              </motion.li>
             ))}
+          </motion.ul>
+          <div className="text-center mt-14">
+            <a
+              role="button"
+              href="https://github.com/kishanlalbj?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm"
+            >
+              More On Github
+            </a>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section>
@@ -87,14 +157,22 @@ const Home = () => {
             <a
               role="button"
               href="mailto:kishanlalbj@gmail.com"
-              className="inline-flex gap-2 py-2 my-4 text-sm items-center mt-8"
+              className="inline-flex gap-2 text-sm items-center mt-8"
             >
-              <MailIcon />
+              <MailIcon size={16} />
               Contact Me
             </a>
           </div>
         </div>
       </section>
+
+      <a
+        href="#"
+        id="scrollToTop"
+        className="hidden fixed bottom-25 right-25 p-2 rounded-full bg-primary text-secondary"
+      >
+        <ArrowUp />
+      </a>
 
       <Footer />
     </div>

@@ -28,7 +28,7 @@ const Hero = () => {
 
         <Navbar />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-          <div className="flex flex-col md:flex-row items-center justify-evenly gap-8">
+          <div className="flex flex-col flex-col-[1fr_250px] text-[#00000] md:flex-row items-center justify-evenly gap-8">
             <motion.div
               initial={{ y: 16, opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
