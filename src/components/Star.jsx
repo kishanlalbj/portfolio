@@ -21,8 +21,8 @@ export default function StarFieldPulse({
 
     const sunIndex = Math.floor(Math.random() * generated.length);
     generated[sunIndex] = {
-      size: rand(20, 35), // bigger size
-      left: rand(30, 70), // less random: keep it roughly central
+      size: rand(20, 35),
+      left: rand(30, 70),
       top: rand(30, 70),
       delay: rand(0, 2).toFixed(2),
       duration: rand(3, 6).toFixed(2),

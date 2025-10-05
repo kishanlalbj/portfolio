@@ -6,7 +6,7 @@ const Navbar = () => {
       initial={{ y: "-100%", opacity: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       animate={{ y: 0, opacity: 1 }}
-      className="h-18 bg-secondary shadow-2xl container mx-auto px-4 max-w-6xl my-5 rounded-lg"
+      className="h-14 bg-transparent shadow-2xl container mx-auto px-4 max-w-6xl my-5 rounded-lg"
     >
       <div className="container mx-auto px-4 max-w-6xl flex items-center justify-between h-full">
         <a href="#" className="text-lg font-bold">
