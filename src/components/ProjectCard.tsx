@@ -1,4 +1,6 @@
-const ProjectCard = ({ title, image, techStack, description }) => {
+import { Project } from "../types";
+
+const ProjectCard = ({ title, image, techStack, description }: Project) => {
   return (
     <div className="border border-secondary hover:shadow-sm shadow-primary rounded-md">
       <div className="h-48 w-full overflow-hidden bg-gray-900 flex items-center justify-center">

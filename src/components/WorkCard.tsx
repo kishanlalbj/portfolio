@@ -1,4 +1,6 @@
-const WorkCard = ({ company, from, to, isPresent, designation }) => {
+import { Work } from "../types";
+
+const WorkCard = ({ company, from, to, isPresent, designation }: Work) => {
   return (
     <div className="p-4 border border-secondary hover:shadow-sm shadow-primary rounded-md">
       <div>

@@ -1,19 +1,11 @@
-export const colors = [
-  "#F1E9DA",
-  "#D90368",
-  "#2E294E",
-  "#541388",
-  "#FFD400",
-  "#9B287B"
-];
+import { Point } from "../types";
 
-// const sizes = ["fa-2xs", "fa-xs", "fa-sm", "fa-lg", "fa-xl"];
 export const animations = ["fall-1", "fall-2", "fall-3"];
 
-export const selectRandom = (arr) =>
+export const selectRandom = <T>(arr: T[]): T =>
   arr[Math.floor(Math.floor(Math.random() * arr.length))];
 
-export const calcDistance = (a, b) => {
+export const calcDistance = (a: Point, b: Point) => {
   const diffX = b.x - a.x,
     diffY = b.y - a.y;
 
@@ -35,10 +27,12 @@ export const generateRandomPoint = () => {
 
 export const ScrollToTopObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
+    const el = document.getElementById("scrollToTop");
+
     if (entry.isIntersecting) {
-      document.querySelector("#scrollToTop").style.display = "block";
+      if (el) el.style.display = "block";
     } else {
-      document.querySelector("#scrollToTop").style.display = "none";
+      if (el) el.style.display = "none";
     }
   });
 });

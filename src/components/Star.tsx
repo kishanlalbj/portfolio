@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-const rand = (min, max) => Math.random() * (max - min) + min;
+const rand = (min: number, max: number) => Math.random() * (max - min) + min;
 
 export default function StarFieldPulse({
   count = 40,
