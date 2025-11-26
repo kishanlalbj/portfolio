@@ -1,9 +1,40 @@
 import { Point } from "../types";
 
-export const animations = ["fall-1", "fall-2", "fall-3"];
+const hasCrypto =
+  typeof window !== "undefined" &&
+  !!(window.crypto || (window as any).msCrypto) &&
+  typeof (window.crypto || (window as any).msCrypto).getRandomValues ===
+    "function";
 
-export const selectRandom = <T>(arr: T[]): T =>
-  arr[Math.floor(Math.floor(Math.random() * arr.length))];
+const getCryptoUint32 = (): number => {
+  const cryptoObj = (window.crypto || (window as any).msCrypto) as Crypto;
+  return cryptoObj.getRandomValues(new Uint32Array(1))[0];
+};
+
+const secureRandomInt = (max: number): number => {
+  if (max <= 0) return 0;
+  if (!hasCrypto) return Math.floor(Math.random() * max);
+
+  const maxUint32 = 4294967296;
+  const limit = Math.floor(maxUint32 / max) * max;
+  let r = getCryptoUint32();
+  while (r >= limit) {
+    r = getCryptoUint32();
+  }
+  return r % max;
+};
+
+const secureRandomFloat = (): number => {
+  if (hasCrypto) {
+    return getCryptoUint32() / 4294967296;
+  }
+  return Math.random();
+};
+
+export const selectRandom = <T>(arr: T[]): T => {
+  const idx = secureRandomInt(arr.length);
+  return arr[idx];
+};
 
 export const calcDistance = (a: Point, b: Point) => {
   const diffX = b.x - a.x,
@@ -13,15 +44,16 @@ export const calcDistance = (a: Point, b: Point) => {
 };
 
 export const generateRandomPoint = () => {
-  var width = window.innerWidth - 170;
-  var height = window.innerHeight;
+  if (typeof window === "undefined") {
+    return { x: 0, y: 0 };
+  }
 
-  var x = Math.random() * width;
-  var y = Math.random() * height;
+  const width = Math.max(0, window.innerWidth - 170);
+  const height = Math.max(0, window.innerHeight);
 
   return {
-    x: x,
-    y: y
+    x: secureRandomFloat() * width,
+    y: secureRandomFloat() * height
   };
 };
 
