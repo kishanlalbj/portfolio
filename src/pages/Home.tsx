@@ -8,9 +8,10 @@ import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 import Title from "../components/Title";
 import useScrollToTop from "../hooks/useScrollToTop";
+import { Source } from "../types";
 
 const Home = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState<Source>();
 
   const listVariants = {
     hidden: { opacity: 0 },
@@ -25,7 +26,11 @@ const Home = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 16 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } }
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }
+    }
   };
 
   useScrollToTop();
@@ -34,7 +39,6 @@ const Home = () => {
     const fetchData = async () => {
       const res = await fetch("/data.json");
       const data = await res.json();
-      console.log({ data });
       setData(data);
     };
 
@@ -57,10 +61,6 @@ const Home = () => {
           <Title name={"About"} />
 
           <p className="text-lg leading-8">{data?.personalDetails?.aboutMe1}</p>
-
-          <p className="text-lg leading-8 my-6">
-            {data?.personalDetails?.aboutMe2}
-          </p>
         </motion.div>
       </section>
 
@@ -73,14 +73,15 @@ const Home = () => {
             viewport={{ once: true, amount: 0.6 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-4"
           >
-            {data?.skills?.map((skill, index) => (
-              <motion.li
+            {data?.skills?.map((skill) => (
+              <motion.article
                 key={skill.id}
+                // @ts-expect-error unknown error
                 variants={itemVariants}
                 className="focus:outline-none w-full"
               >
-                <Skill img={skill.logo} name={skill.name} index={index} />
-              </motion.li>
+                <Skill logo={skill.logo} id={skill.id} name={skill.name} />
+              </motion.article>
             ))}
           </motion.ul>
         </div>
@@ -97,13 +98,14 @@ const Home = () => {
         >
           <Title name="Work" />
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {data?.works?.map((work, index) => (
+            {data?.works?.map((work) => (
               <motion.li
                 key={work.id}
+                // @ts-expect-error unknown error
                 variants={itemVariants}
                 className="focus:outline-none"
               >
-                <WorkCard key={work.id} index={index} {...work}></WorkCard>
+                <WorkCard key={work.id} {...work}></WorkCard>
               </motion.li>
             ))}
           </ul>
@@ -121,13 +123,14 @@ const Home = () => {
         >
           <Title name="Projects" />
           <motion.ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {data?.projects?.map((project, index) => (
+            {data?.projects?.map((project) => (
               <motion.li
                 key={project.id}
+                // @ts-expect-error unknown error
                 variants={itemVariants}
                 className="focus:outline-none"
               >
-                <ProjectCard key={project.id} index={index} {...project} />
+                <ProjectCard key={project.id} {...project} />
               </motion.li>
             ))}
           </motion.ul>
