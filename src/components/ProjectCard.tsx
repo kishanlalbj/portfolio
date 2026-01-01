@@ -1,6 +1,14 @@
 import { Project } from "../types";
+import { ExternalLinkIcon, Code2Icon } from "lucide-react";
 
-const ProjectCard = ({ title, image, techStack, description }: Project) => {
+const ProjectCard = ({
+  title,
+  image,
+  techStack,
+  description,
+  liveUrl,
+  sourceUrl
+}: Project) => {
   return (
     <div className="border border-secondary hover:shadow-sm shadow-primary rounded-md">
       <div className="h-48 w-full overflow-hidden bg-gray-900 flex items-center justify-center">
@@ -17,6 +25,18 @@ const ProjectCard = ({ title, image, techStack, description }: Project) => {
                 {s}
               </p>
             ))}
+        </div>
+
+        <div className="flex items-center  gap-4">
+          {liveUrl && (
+            <a href={liveUrl} target="_blank">
+              <ExternalLinkIcon />
+            </a>
+          )}
+
+          <a href={sourceUrl} target="_blank">
+            <Code2Icon />
+          </a>
         </div>
       </div>
     </div>
