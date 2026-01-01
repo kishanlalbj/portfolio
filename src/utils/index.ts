@@ -11,7 +11,7 @@ const getCryptoUint32 = (): number => {
   return cryptoObj.getRandomValues(new Uint32Array(1))[0];
 };
 
-const secureRandomInt = (max: number): number => {
+export const secureRandomInt = (max: number): number => {
   if (max <= 0) return 0;
   if (!hasCrypto) return Math.floor(Math.random() * max);
 
@@ -24,7 +24,7 @@ const secureRandomInt = (max: number): number => {
   return r % max;
 };
 
-const secureRandomFloat = (): number => {
+export const secureRandomFloat = (): number => {
   if (hasCrypto) {
     return getCryptoUint32() / 4294967296;
   }

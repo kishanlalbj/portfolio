@@ -6,6 +6,8 @@ export type Project = Id & {
   image: string;
   techStack: string[];
   description: string[];
+  liveUrl?: string;
+  sourceUrl?: string;
 };
 
 export type Skill = Id & {

@@ -97,6 +97,15 @@
   ],
   "projects": [
     {
+      "id": 5,
+      "title": "Health & Expense Tracker",
+      "image": "proj-6.png",
+      "techStack": ["NextJS", "Docker", "Postgres", "Shadcn"],
+      "description": "Webapp to track your expenses and health with necessory insights",
+      "liveUrl": "https://daily-tracker-taupe.vercel.app",
+      "sourceUrl": "https://github.com/kishanlalbj/daily-tracker"
+    },
+    {
       "id": 4,
       "title": "Music Player",
       "image": "proj-4.png",

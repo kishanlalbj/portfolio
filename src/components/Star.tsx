@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { secureRandomInt } from "../utils";
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
 
@@ -19,7 +20,7 @@ export default function StarFieldPulse({
       return { size, left, top, delay, duration, glow, isSun: false };
     });
 
-    const sunIndex = Math.floor(Math.random() * generated.length);
+    const sunIndex = secureRandomInt(generated.length);
     generated[sunIndex] = {
       size: rand(20, 35),
       left: rand(30, 70),
