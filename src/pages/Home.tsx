@@ -6,7 +6,7 @@ import WorkCard from "../components/WorkCard";
 import { ArrowUp, MailIcon } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
-import Title from "../components/Title";
+import Title from "../components/Title/Title";
 import useScrollToTop from "../hooks/useScrollToTop";
 import { Source } from "../types";
 
