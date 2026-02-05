@@ -21,9 +21,9 @@ const item = {
 const Hero = () => {
   return (
     <>
-      <div className="relative h-[100vh]">
+      <div className="relative h-screen">
         <div className="absolute inset-0 -z-10">
-          <StarFieldPulse count={80} width="100%" height="100%" comets={10} />
+          <StarFieldPulse count={80} width="100%" height="100%" />
         </div>
 
         <Navbar />
