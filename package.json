@@ -47,6 +47,12 @@
   },
   "overrides": {
     "@babel/helpers": "^7.26.10",
-    "@eslint/plugin-kit": "0.3.4"
+    "@eslint/plugin-kit": "0.3.4",
+    "minimatch": "^10.2.1"
+  },
+  "resolutions": {
+    "@babel/helpers": "^7.26.10",
+    "@eslint/plugin-kit": "0.3.4",
+    "minimatch": "10.2.1"
   }
 }
