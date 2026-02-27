@@ -117,7 +117,7 @@ const Home = () => {
           variants={listVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="container mx-auto px-4 max-w-6xl my-25"
           id="projects"
         >
