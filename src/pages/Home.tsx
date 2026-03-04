@@ -10,28 +10,29 @@ import Title from "../components/Title/Title";
 import useScrollToTop from "../hooks/useScrollToTop";
 import { Source } from "../types";
 
+const listVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      when: "beforeChildren"
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const }
+  }
+};
+
 const Home = () => {
   const [data, setData] = useState<Source>();
-
-  const listVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        when: "beforeChildren"
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 16 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }
-    }
-  };
 
   useScrollToTop();
 
@@ -49,51 +50,59 @@ const Home = () => {
     <div className="relative">
       <Hero />
 
+      {/* About */}
       <section id="about-section">
         <motion.div
           variants={listVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.6 }}
-          className="container mx-auto px-4 max-w-6xl"
+          viewport={{ once: true, amount: 0.15 }}
+          className="container mx-auto px-4 max-w-6xl w-full"
           id="about"
         >
-          <Title name={"About"} />
-
-          <p className="text-lg leading-8">{data?.personalDetails?.aboutMe1}</p>
+          <Title name="About" />
+          <motion.p
+            variants={itemVariants}
+            className="text-base leading-8 text-white/60 max-w-2xl mx-auto text-center"
+          >
+            {data?.personalDetails?.aboutMe1}
+          </motion.p>
         </motion.div>
       </section>
 
+      {/* Skills */}
       <section>
-        <div className="container mx-auto px-4 max-w-6xl my-25">
-          <motion.ul
+        <div className="container mx-auto px-4 max-w-6xl w-full">
+          <motion.div
             variants={listVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+            viewport={{ once: true, amount: 0.1 }}
           >
-            {data?.skills?.map((skill) => (
-              <motion.article
-                key={skill.id}
-                // @ts-expect-error unknown error
-                variants={itemVariants}
-                className="focus:outline-none w-full"
-              >
-                <Skill logo={skill.logo} id={skill.id} name={skill.name} />
-              </motion.article>
-            ))}
-          </motion.ul>
+            <Title name="Skills" />
+            <ul className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {data?.skills?.map((skill) => (
+                <motion.li
+                  key={skill.id}
+                  variants={itemVariants}
+                  className="w-full"
+                >
+                  <Skill logo={skill.logo} id={skill.id} name={skill.name} />
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </section>
 
+      {/* Work */}
       <section>
         <motion.div
           variants={listVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.6 }}
-          className="container mx-auto px-4 max-w-6xl my-25"
+          viewport={{ once: true, amount: 0.1 }}
+          className="container mx-auto px-4 max-w-6xl w-full"
           id="work"
         >
           <Title name="Work" />
@@ -101,40 +110,40 @@ const Home = () => {
             {data?.works?.map((work) => (
               <motion.li
                 key={work.id}
-                // @ts-expect-error unknown error
                 variants={itemVariants}
-                className="focus:outline-none"
               >
-                <WorkCard key={work.id} {...work}></WorkCard>
+                <WorkCard key={work.id} {...work} />
               </motion.li>
             ))}
           </ul>
         </motion.div>
       </section>
 
+      {/* Projects */}
       <section>
         <motion.div
           variants={listVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="container mx-auto px-4 max-w-6xl my-25"
+          viewport={{ once: true, amount: 0.05 }}
+          className="container mx-auto px-4 max-w-6xl w-full"
           id="projects"
         >
           <Title name="Projects" />
-          <motion.ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {data?.projects?.map((project) => (
               <motion.li
                 key={project.id}
-                // @ts-expect-error unknown error
                 variants={itemVariants}
-                className="focus:outline-none"
               >
                 <ProjectCard key={project.id} {...project} />
               </motion.li>
             ))}
-          </motion.ul>
-          <div className="text-center mt-14">
+          </ul>
+          <motion.div
+            variants={itemVariants}
+            className="text-center mt-12"
+          >
             <a
               role="button"
               href="https://github.com/kishanlalbj?tab=repositories"
@@ -144,29 +153,40 @@ const Home = () => {
             >
               More On Github
             </a>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
 
+      {/* Contact */}
       <section>
-        <div className="container mx-auto px-4 max-w-6xl my-25" id="contact-me">
-          <div className="flex flex-col items-center justify-center">
-            <Title name="Contact Me"></Title>
-            <p className="text-center">
+        <motion.div
+          variants={listVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="container mx-auto px-4 max-w-6xl w-full"
+          id="contact-me"
+        >
+          <div className="flex flex-col items-center justify-center text-center">
+            <Title name="Contact Me" />
+            <motion.p
+              variants={itemVariants}
+              className="text-sm text-white/50 max-w-md leading-7"
+            >
               I&apos;m always open to new opportunities, collaborations, or just
               a good tech chat. Drop me a message and I&apos;ll get back soon.
-            </p>
-
-            <a
+            </motion.p>
+            <motion.a
+              variants={itemVariants}
               role="button"
               href="mailto:kishanlalbj@gmail.com"
               className="inline-flex gap-2 text-sm items-center mt-8"
             >
-              <MailIcon size={16} />
+              <MailIcon size={14} />
               Contact Me
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <a
