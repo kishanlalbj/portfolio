@@ -16,6 +16,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
   }
 }
 
@@ -67,6 +68,7 @@
 
   section {
     @apply min-h-screen flex items-center py-24;
+    scroll-snap-align: start;
   }
 
   .glass-card {
@@ -195,6 +197,9 @@
 
 /* ─── Accessibility ────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-snap-type: none;
+  }
   .animate-pulse,
   .animate-float,
   .animate-glow-pulse,

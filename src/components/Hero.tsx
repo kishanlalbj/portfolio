@@ -26,7 +26,7 @@ const item = {
 const Hero = () => {
   return (
     <>
-      <div className="relative h-screen overflow-hidden">
+      <div className="relative h-screen overflow-hidden [scroll-snap-align:start]">
         {/* Galaxy background */}
         <StarBackground count={220} width="100%" height="100%" />
 
