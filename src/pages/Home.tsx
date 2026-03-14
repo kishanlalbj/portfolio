@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import WorkCard from "../components/WorkCard";
 import { ArrowUp, MailIcon } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
+import CertificationCard from "../components/CertificationCard";
 import Footer from "../components/Footer";
 import Title from "../components/Title/Title";
 import useScrollToTop from "../hooks/useScrollToTop";
@@ -154,6 +155,27 @@ const Home = () => {
               More On Github
             </a>
           </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Certifications */}
+      <section>
+        <motion.div
+          variants={listVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+          className="container mx-auto px-4 max-w-6xl w-full"
+          id="certifications"
+        >
+          <Title name="Certifications" />
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {data?.achievements?.map((cert) => (
+              <motion.li key={cert.id} variants={itemVariants}>
+                <CertificationCard {...cert} />
+              </motion.li>
+            ))}
+          </ul>
         </motion.div>
       </section>
 
