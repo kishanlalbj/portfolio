@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import Skill from "../components/Skill";
 import { useEffect, useState } from "react";
 import WorkCard from "../components/WorkCard";
@@ -35,7 +35,7 @@ const itemVariants = {
 const Home = () => {
   const [data, setData] = useState<Source>();
 
-  useScrollToTop();
+  const showScrollTop = useScrollToTop();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -211,13 +211,20 @@ const Home = () => {
         </motion.div>
       </section>
 
-      <a
-        href="#"
-        id="scrollToTop"
-        className="hidden fixed bottom-25 right-25 p-2 rounded-full bg-primary text-secondary"
-      >
-        <ArrowUp />
-      </a>
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.a
+            href="#"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.2 }}
+            className="fixed bottom-10 right-10 p-2 rounded-full bg-primary text-secondary z-50"
+          >
+            <ArrowUp />
+          </motion.a>
+        )}
+      </AnimatePresence>
 
       <Footer />
     </div>
