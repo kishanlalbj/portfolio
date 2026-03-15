@@ -1,4 +1,4 @@
-import data from "../../public/data.json";
+import data from "@/data/data.json";
 import Home from "@/components/HomeClient";
 import { Source } from "@/types";
 

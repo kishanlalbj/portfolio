@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type React from "react";
 import { Source_Code_Pro } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
@@ -9,16 +10,16 @@ const sourceCodePro = Source_Code_Pro({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
   variable: "--font-source-code",
-  display: "swap",
+  display: "swap"
 });
 
-const siteUrl = "https://kishanlalbj.vercel.app";
+const siteUrl = "https://kishanlalbj.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "Kishanlal BJ | Full Stack Developer",
-    template: "%s | Kishanlal BJ",
+    template: "%s | Kishanlal BJ"
   },
   description:
     "Full Stack Developer with 9+ years of experience building robust, user-centric web applications using the MERN stack. Available for new opportunities.",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     "MongoDB",
     "Portfolio",
     "Software Engineer",
-    "Web Developer",
+    "Web Developer"
   ],
   authors: [{ name: "Kishanlal BJ", url: siteUrl }],
   creator: "Kishanlal BJ",
@@ -45,24 +46,24 @@ export const metadata: Metadata = {
     description:
       "Full Stack Developer with 9+ years of experience building robust, user-centric web applications using the MERN stack.",
     siteName: "Kishanlal BJ Portfolio",
-    images: [{ url: "/me.jpeg", width: 400, height: 400, alt: "Kishanlal BJ" }],
+    images: [{ url: "/me.jpeg", width: 400, height: 400, alt: "Kishanlal BJ" }]
   },
   twitter: {
     card: "summary",
     title: "Kishanlal BJ | Full Stack Developer",
     description:
       "Full Stack Developer with 9+ years of experience building robust, user-centric web applications using the MERN stack.",
-    images: ["/me.jpeg"],
+    images: ["/me.jpeg"]
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
-  },
+    googleBot: { index: true, follow: true }
+  }
 };
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {

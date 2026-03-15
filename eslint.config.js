@@ -4,7 +4,6 @@ import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
-import vitestGlobals from "eslint-plugin-vitest/globals";
 
 export default [
   js.configs.recommended,
@@ -34,20 +33,6 @@ export default [
       // React hooks
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn"
-    }
-  },
-  {
-    files: ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}"],
-    plugins: {
-      vitest
-    },
-    languageOptions: {
-      globals: {
-        ...vitestGlobals
-      }
-    },
-    rules: {
-      ...vitest.configs.recommended.rules
     }
   }
 ];
