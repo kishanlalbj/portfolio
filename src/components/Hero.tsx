@@ -1,7 +1,10 @@
+"use client";
+
+import Image from "next/image";
 import { BriefcaseBusinessIcon, MapPinIcon } from "lucide-react";
 import { motion, stagger } from "motion/react";
-import StarBackground from "./Star";
-import Navbar from "./Navbar";
+import StarBackground from "@/components/Star";
+import Navbar from "@/components/Navbar";
 
 const container = {
   hidden: {},
@@ -115,10 +118,11 @@ const Hero = () => {
 
                 {/* Avatar image */}
                 <div className="w-44 aspect-square rounded-full overflow-hidden border border-white/12 relative">
-                  <img
+                  <Image
                     src="/me.jpeg"
                     alt="avatar"
-                    className="w-full h-full object-cover object-top grayscale-80"
+                    fill
+                    className="object-cover object-top grayscale-80"
                     draggable={false}
                   />
                   {/* Inner glow overlay */}

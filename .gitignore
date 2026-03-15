@@ -6,24 +6,34 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-.env*
 
+# Dependencies
 node_modules
+
+# Next.js
+.next
+out
+next-env.d.ts
+
+# Build output
 dist
 dist-ssr
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Misc
 *.local
+.DS_Store
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
-
-.env
-.env.*

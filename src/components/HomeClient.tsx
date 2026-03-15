@@ -1,15 +1,16 @@
-import Hero from "../components/Hero";
+"use client";
+
+import Hero from "@/components/Hero";
 import { motion, AnimatePresence } from "motion/react";
-import Skill from "../components/Skill";
-import { useEffect, useState } from "react";
-import WorkCard from "../components/WorkCard";
+import Skill from "@/components/Skill";
+import WorkCard from "@/components/WorkCard";
 import { ArrowUp, MailIcon } from "lucide-react";
-import ProjectCard from "../components/ProjectCard";
-import CertificationCard from "../components/CertificationCard";
-import Footer from "../components/Footer";
-import Title from "../components/Title/Title";
-import useScrollToTop from "../hooks/useScrollToTop";
-import { Source } from "../types";
+import ProjectCard from "@/components/ProjectCard";
+import CertificationCard from "@/components/CertificationCard";
+import Footer from "@/components/Footer";
+import Title from "@/components/Title/Title";
+import useScrollToTop from "@/hooks/useScrollToTop";
+import { Source } from "@/types";
 
 const listVariants = {
   hidden: { opacity: 0 },
@@ -32,20 +33,8 @@ const itemVariants = {
   }
 };
 
-const Home = () => {
-  const [data, setData] = useState<Source>();
-
+const Home = ({ data }: { data: Source }) => {
   const showScrollTop = useScrollToTop();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/data.json");
-      const data = await res.json();
-      setData(data);
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <div className="relative">
@@ -109,10 +98,7 @@ const Home = () => {
           <Title name="Work" />
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {data?.works?.map((work) => (
-              <motion.li
-                key={work.id}
-                variants={itemVariants}
-              >
+              <motion.li key={work.id} variants={itemVariants}>
                 <WorkCard key={work.id} {...work} />
               </motion.li>
             ))}
@@ -133,18 +119,12 @@ const Home = () => {
           <Title name="Projects" />
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {data?.projects?.map((project) => (
-              <motion.li
-                key={project.id}
-                variants={itemVariants}
-              >
+              <motion.li key={project.id} variants={itemVariants}>
                 <ProjectCard key={project.id} {...project} />
               </motion.li>
             ))}
           </ul>
-          <motion.div
-            variants={itemVariants}
-            className="text-center mt-12"
-          >
+          <motion.div variants={itemVariants} className="text-center mt-12">
             <a
               role="button"
               href="https://github.com/kishanlalbj?tab=repositories"

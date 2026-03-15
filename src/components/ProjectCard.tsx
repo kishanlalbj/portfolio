@@ -1,6 +1,9 @@
+"use client";
+
+import Image from "next/image";
 import { motion } from "motion/react";
 import { ExternalLinkIcon, Code2Icon } from "lucide-react";
-import { Project } from "../types";
+import { Project } from "@/types";
 
 const ProjectCard = ({
   title,
@@ -18,10 +21,11 @@ const ProjectCard = ({
     >
       {/* Image */}
       <div className="h-44 overflow-hidden bg-black/30 relative">
-        <img
-          src={image}
+        <Image
+          src={`/${image}`}
           alt={title}
-          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+          fill
+          className="object-contain transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>

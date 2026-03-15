@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from "motion/react";
 import { BriefcaseBusinessIcon } from "lucide-react";
-import { Work } from "../types";
+import { Work } from "@/types";
 
 const WorkCard = ({ company, from, to, isPresent, designation }: Work) => {
   return (
