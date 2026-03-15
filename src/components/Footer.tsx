@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 max-w-6xl h-15 flex items-center justify-center text-sm md:text-md">
         <p>
           &copy; {new Date().getFullYear()} | Developed by{" "}
-          <a href="https://github.com/kishanlalbj" target="_blank">
+          <a href="https://github.com/kishanlalbj" target="_blank" rel="noopener noreferrer">
             @kishanlalbj
           </a>
         </p>
