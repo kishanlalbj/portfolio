@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from "motion/react";
 import { AwardIcon } from "lucide-react";
-import { Achievement } from "../types";
+import { Achievement } from "@/types";
 
 const CertificationCard = ({ title, issuer, date, badge }: Achievement) => {
   return (

@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo } from "react";
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
