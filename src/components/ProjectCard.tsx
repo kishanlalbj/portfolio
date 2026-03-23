@@ -25,6 +25,7 @@ const ProjectCard = ({
           src={`/${image}`}
           alt={title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-contain transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -62,15 +63,17 @@ const ProjectCard = ({
               Live
             </a>
           )}
-          <a
-            href={sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/35 hover:text-primary transition-colors duration-200 inline-flex items-center gap-1.5 text-xs"
-          >
-            <Code2Icon size={13} />
-            Source
-          </a>
+          {sourceUrl && (
+            <a
+              href={sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/35 hover:text-primary transition-colors duration-200 inline-flex items-center gap-1.5 text-xs"
+            >
+              <Code2Icon size={13} />
+              Source
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

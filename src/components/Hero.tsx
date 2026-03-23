@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { BriefcaseBusinessIcon, MapPinIcon } from "lucide-react";
-import { motion, stagger } from "motion/react";
+import { motion } from "motion/react";
 import StarBackground from "@/components/Star";
 import Navbar from "@/components/Navbar";
 
@@ -10,7 +10,7 @@ const container = {
   hidden: {},
   visible: {
     transition: {
-      delayChildren: stagger(0.18),
+      staggerChildren: 0.18,
       when: "beforeChildren"
     }
   }
@@ -122,6 +122,8 @@ const Hero = () => {
                     src="/me.jpeg"
                     alt="avatar"
                     fill
+                    sizes="(max-width: 768px) 176px, 176px"
+                    loading="eager"
                     className="object-cover object-top grayscale-80"
                     draggable={false}
                   />

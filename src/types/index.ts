@@ -5,7 +5,7 @@ export type Project = Id & {
   title: string;
   image: string;
   techStack: string[];
-  description: string[];
+  description: string;
   liveUrl?: string;
   sourceUrl?: string;
 };

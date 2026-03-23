@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
 
@@ -26,35 +26,53 @@ interface Comet {
   tailLength: number;
 }
 
+function generateStarData(count: number) {
+  const stars: StarDot[] = Array.from({ length: count }).map(() => {
+    const tier = Math.random();
+    const size =
+      tier < 0.62 ? rand(0.5, 1.5) : tier < 0.92 ? rand(1.5, 2.5) : rand(2.5, 4);
+    return {
+      size,
+      left: rand(0, 100),
+      top: rand(0, 100),
+      delay: rand(0, 10).toFixed(2),
+      duration: rand(2.5, 7).toFixed(2),
+      glow: size > 2.5 ? rand(4, 10) : size > 1.5 ? rand(0, 3) : 0,
+      opacity: rand(0.3, 1)
+    };
+  });
+
+  const comets: Comet[] = [
+    { id: 1, top: rand(6, 18),  rotate: rand(22, 30), delay: 2,  tailLength: Math.round(rand(260, 360)) },
+    { id: 2, top: rand(14, 30), rotate: rand(26, 34), delay: 32, tailLength: Math.round(rand(220, 320)) },
+    { id: 3, top: rand(4, 20),  rotate: rand(20, 28), delay: 62, tailLength: Math.round(rand(280, 400)) }
+  ];
+
+  return { stars, comets };
+}
+
 export default function StarBackground({
   count = 200,
   width = "100%",
   height = "100%"
 }) {
-  const { stars, comets } = useMemo(() => {
-    const stars: StarDot[] = Array.from({ length: count }).map(() => {
-      const tier = Math.random();
-      const size =
-        tier < 0.62 ? rand(0.5, 1.5) : tier < 0.92 ? rand(1.5, 2.5) : rand(2.5, 4);
-      return {
-        size,
-        left: rand(0, 100),
-        top: rand(0, 100),
-        delay: rand(0, 10).toFixed(2),
-        duration: rand(2.5, 7).toFixed(2),
-        glow: size > 2.5 ? rand(4, 10) : size > 1.5 ? rand(0, 3) : 0,
-        opacity: rand(0.3, 1)
-      };
-    });
+  const [data, setData] = useState<{ stars: StarDot[]; comets: Comet[] } | null>(null);
 
-    const comets: Comet[] = [
-      { id: 1, top: rand(6, 18),  rotate: rand(22, 30), delay: 2,  tailLength: Math.round(rand(260, 360)) },
-      { id: 2, top: rand(14, 30), rotate: rand(26, 34), delay: 32, tailLength: Math.round(rand(220, 320)) },
-      { id: 3, top: rand(4, 20),  rotate: rand(20, 28), delay: 62, tailLength: Math.round(rand(280, 400)) }
-    ];
-
-    return { stars, comets };
+  useEffect(() => {
+    setData(generateStarData(count));
   }, [count]);
+
+  if (!data) {
+    return (
+      <div
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+        style={{ width, height }}
+        aria-hidden="true"
+      />
+    );
+  }
+
+  const { stars, comets } = data;
 
   return (
     <div

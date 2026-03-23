@@ -1,19 +1,5 @@
 import type { NextConfig } from "next";
 
-const securityHeaders = [
-  { key: "X-Frame-Options", value: "DENY" },
-  { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  {
-    key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=()",
-  },
-  {
-    key: "Content-Security-Policy",
-    value: "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://kit.fontawesome.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://kit-free.fontawesome.com; img-src 'self' https: data:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'none';",
-  },
-];
-
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -22,14 +8,6 @@ const nextConfig: NextConfig = {
         hostname: "cdn.jsdelivr.net",
       },
     ],
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: securityHeaders,
-      },
-    ];
   },
 };
 
