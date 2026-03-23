@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/kishanlalbj/portfolio/compare/v1.0.0...v1.0.1) (2026-03-15)
+
+
+### Bug Fixes
+
+* **security:** add missing rel attribute and security headers ([82f0589](https://github.com/kishanlalbj/portfolio/commit/82f05890e930e17e117f66026ea5f31a41a14923))
+
 # 1.0.0 (2026-03-15)
 
 
