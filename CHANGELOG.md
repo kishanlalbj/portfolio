@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/kishanlalbj/portfolio/compare/v1.0.2...v1.0.3) (2026-03-23)
+
+
+### Bug Fixes
+
+* resolve hydration mismatches and improve image performance ([95eaaef](https://github.com/kishanlalbj/portfolio/commit/95eaaef3d2e36fa1e98956ab645283ee47a5e064))
+
 ## [1.0.2](https://github.com/kishanlalbj/portfolio/compare/v1.0.1...v1.0.2) (2026-03-23)
 
 
