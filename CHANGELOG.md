@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/kishanlalbj/portfolio/compare/v1.0.1...v1.0.2) (2026-03-23)
+
+
+### Bug Fixes
+
+* **security:** upgrade dependencies and add content security policy ([9e8b3e7](https://github.com/kishanlalbj/portfolio/commit/9e8b3e7697735f1dd932cc7010e94e76c07917b3))
+
 ## [1.0.1](https://github.com/kishanlalbj/portfolio/compare/v1.0.0...v1.0.1) (2026-03-15)
 
 
