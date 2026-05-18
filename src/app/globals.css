@@ -194,6 +194,19 @@
   animation: glow-pulse 3s ease-in-out infinite;
 }
 
+/* ─── Box-reflect: section titles ──────────────────────────────── */
+.title-reflect {
+  -webkit-box-reflect: below 3px
+    linear-gradient(transparent 40%, rgba(246, 241, 213, 0.12));
+}
+
+/* ─── Box-reflect: skill icons ─────────────────────────────────── */
+.icon-reflect {
+  display: inline-block;
+  -webkit-box-reflect: below 2px
+    linear-gradient(transparent 50%, rgba(255, 255, 255, 0.07));
+}
+
 /* ─── Accessibility ────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -214,5 +227,9 @@
   }
   [style*="orbit-ccw"] {
     transform: rotate(225deg) translateX(100px) !important;
+  }
+  .title-reflect,
+  .icon-reflect {
+    -webkit-box-reflect: none;
   }
 }

@@ -1,7 +1,7 @@
 const Title = ({ name }: { name: string }) => {
   return (
     <div className="mb-10">
-      <h2 className="text-center text-3xl md:text-4xl font-bold gradient-text py-2">
+      <h2 className="text-center text-3xl md:text-4xl font-bold gradient-text py-2 title-reflect">
         {name}
       </h2>
       <div className="flex items-center justify-center gap-3 mt-2">
