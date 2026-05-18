@@ -163,6 +163,14 @@
       "badge": ""
     },
     {
+      "id": 4,
+      "title": "Claude 101",
+      "issuer": "Anthropic",
+      "date": "May 2026",
+      "expiry": "no-expire",
+      "badge": "https://verify.skilljar.com/c/aiaf22tuw93j"
+    },
+    {
       "id": 3,
       "title": "Claude Code 101",
       "issuer": "Anthropic",
