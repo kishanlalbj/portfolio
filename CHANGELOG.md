@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/kishanlalbj/portfolio/compare/v1.0.3...v1.0.4) (2026-05-18)
+
+
+### Bug Fixes
+
+* minor enhancements ([#12](https://github.com/kishanlalbj/portfolio/issues/12)) ([626779e](https://github.com/kishanlalbj/portfolio/commit/626779e65841234eae27027679200a8621b73ce2))
+
 ## [1.0.3](https://github.com/kishanlalbj/portfolio/compare/v1.0.2...v1.0.3) (2026-03-23)
 
 
