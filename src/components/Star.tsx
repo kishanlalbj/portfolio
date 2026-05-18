@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
 
