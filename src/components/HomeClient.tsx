@@ -181,7 +181,7 @@ const Home = ({ data }: { data: Source }) => {
             <motion.a
               variants={itemVariants}
               role="button"
-              href="mailto:kishanlalbj@gmail.com"
+              href={`mailto:${data.personalDetails.siteAdminEmail}`}
               className="inline-flex gap-2 text-sm items-center mt-8"
             >
               <MailIcon size={14} />
