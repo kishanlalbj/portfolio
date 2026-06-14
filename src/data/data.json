@@ -3,6 +3,7 @@
     "firstName": "Kishanlal",
     "lastName": "B J",
     "email": "kishanlalbj@gmail.com",
+    "siteAdminEmail": "me@kishanlalbj.dev",
     "workTitle": "Full Stack Developer",
     "shortIntro": "A seasoned full stack developer with over 9 years of experience in creating web applications for the world",
     "yearsOfExperience": 9,
@@ -161,6 +162,14 @@
       "date": "Sept 2016",
       "expiry": "no-expire",
       "badge": ""
+    },
+    {
+      "id": 4,
+      "title": "Claude 101",
+      "issuer": "Anthropic",
+      "date": "May 2026",
+      "expiry": "no-expire",
+      "badge": "https://verify.skilljar.com/c/aiaf22tuw93j"
     },
     {
       "id": 3,

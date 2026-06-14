@@ -211,7 +211,7 @@ const Hero = () => {
                   </li>
                   <li>
                     <a
-                      href="mailto:kishanlalbj@gmail.com"
+                      href="mailto:me@kishanlalbj.dev"
                       className="text-white/35 hover:text-primary transition-colors duration-200"
                     >
                       <i className="fa fa-envelope text-xl" />

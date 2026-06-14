@@ -27,7 +27,7 @@ export default [
       "react-hooks": reactHooksPlugin
     },
     rules: {
-      // TypeScript
+      "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": "warn",
 
       // React hooks

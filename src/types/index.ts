@@ -41,6 +41,7 @@ export type Source = {
     firstName: string;
     lastName: string;
     email: string;
+    siteAdminEmail: string;
     workTitle: string;
     shortIntro: string;
     yearsOfExperience: number;
