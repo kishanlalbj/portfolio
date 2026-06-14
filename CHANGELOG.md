@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/kishanlalbj/portfolio/compare/v1.0.4...v1.1.0) (2026-05-18)
+
+
+### Features
+
+* add CI workflow for linting and building on pull requests ([42e85c2](https://github.com/kishanlalbj/portfolio/commit/42e85c2eb5eef1f8e54cc785c0b92d9fc4809535))
+
 ## [1.0.4](https://github.com/kishanlalbj/portfolio/compare/v1.0.3...v1.0.4) (2026-05-18)
 
 
