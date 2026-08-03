@@ -9,6 +9,7 @@ const TRAVERSE_S = 4.5;  // seconds to cross the screen
 const WAIT_S = 85.5;     // pause after each crossing (total cycle = 90 s)
 
 interface StarDot {
+  id: string;
   size: number;
   left: number;
   top: number;
@@ -16,6 +17,18 @@ interface StarDot {
   duration: string;
   glow: number;
   opacity: number;
+}
+
+function pickStarSize(tier: number): number {
+  if (tier < 0.62) return rand(0.5, 1.5);
+  if (tier < 0.92) return rand(1.5, 2.5);
+  return rand(2.5, 4);
+}
+
+function pickStarGlow(size: number): number {
+  if (size > 2.5) return rand(4, 10);
+  if (size > 1.5) return rand(0, 3);
+  return 0;
 }
 
 interface Comet {
@@ -27,17 +40,17 @@ interface Comet {
 }
 
 function generateStarData(count: number) {
-  const stars: StarDot[] = Array.from({ length: count }).map(() => {
+  const stars: StarDot[] = Array.from({ length: count }).map((_, i) => {
     const tier = Math.random();
-    const size =
-      tier < 0.62 ? rand(0.5, 1.5) : tier < 0.92 ? rand(1.5, 2.5) : rand(2.5, 4);
+    const size = pickStarSize(tier);
     return {
+      id: `star-${i}-${size.toFixed(3)}`,
       size,
       left: rand(0, 100),
       top: rand(0, 100),
       delay: rand(0, 10).toFixed(2),
       duration: rand(2.5, 7).toFixed(2),
-      glow: size > 2.5 ? rand(4, 10) : size > 1.5 ? rand(0, 3) : 0,
+      glow: pickStarGlow(size),
       opacity: rand(0.3, 1)
     };
   });
@@ -84,9 +97,9 @@ export default function StarBackground({
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black/40" />
 
       {/* ── Star field ──────────────────────────────────────── */}
-      {stars.map((s, i) => (
+      {stars.map((s) => (
         <span
-          key={i}
+          key={s.id}
           className="absolute rounded-full"
           style={{
             width: `${s.size}px`,
