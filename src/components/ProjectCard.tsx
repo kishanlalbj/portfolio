@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { ExternalLinkIcon, Code2Icon } from "lucide-react";
 import { Project } from "@/types";
+import { trackEvent } from "@/lib/analytics";
 
 const ProjectCard = ({
   title,
@@ -57,6 +58,12 @@ const ProjectCard = ({
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("project_link_click", {
+                  project_name: title,
+                  link_type: "live"
+                })
+              }
               className="text-white/35 hover:text-primary transition-colors duration-200 inline-flex items-center gap-1.5 text-xs"
             >
               <ExternalLinkIcon size={13} />
@@ -68,6 +75,12 @@ const ProjectCard = ({
               href={sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("project_link_click", {
+                  project_name: title,
+                  link_type: "source"
+                })
+              }
               className="text-white/35 hover:text-primary transition-colors duration-200 inline-flex items-center gap-1.5 text-xs"
             >
               <Code2Icon size={13} />

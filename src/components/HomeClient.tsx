@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import Title from "@/components/Title/Title";
 import useScrollToTop from "@/hooks/useScrollToTop";
 import { Source } from "@/types";
+import { trackEvent } from "@/lib/analytics";
 
 const listVariants = {
   hidden: { opacity: 0 },
@@ -130,6 +131,12 @@ const Home = ({ data }: { data: Source }) => {
               href="https://github.com/kishanlalbj?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("social_link_click", {
+                  platform: "github",
+                  location: "projects_section"
+                })
+              }
               className="text-sm"
             >
               More On Github
@@ -182,6 +189,12 @@ const Home = ({ data }: { data: Source }) => {
               variants={itemVariants}
               role="button"
               href={`mailto:${data.personalDetails.siteAdminEmail}`}
+              onClick={() =>
+                trackEvent("social_link_click", {
+                  platform: "email",
+                  location: "contact_section"
+                })
+              }
               className="inline-flex gap-2 text-sm items-center mt-8"
             >
               <MailIcon size={14} />

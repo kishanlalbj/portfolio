@@ -5,6 +5,7 @@ import { BriefcaseBusinessIcon, MapPinIcon } from "lucide-react";
 import { motion } from "motion/react";
 import StarBackground from "@/components/Star";
 import Navbar from "@/components/Navbar";
+import { trackEvent } from "@/lib/analytics";
 
 const container = {
   hidden: {},
@@ -194,6 +195,12 @@ const Hero = () => {
                       href="https://linkedin.com/in/kishanlalbj"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent("social_link_click", {
+                          platform: "linkedin",
+                          location: "hero"
+                        })
+                      }
                       className="text-white/35 hover:text-primary transition-colors duration-200"
                     >
                       <i className="fa-brands fa-linkedin text-xl" />
@@ -204,6 +211,12 @@ const Hero = () => {
                       href="https://github.com/kishanlalbj"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent("social_link_click", {
+                          platform: "github",
+                          location: "hero"
+                        })
+                      }
                       className="text-white/35 hover:text-primary transition-colors duration-200"
                     >
                       <i className="fa-brands fa-github text-xl" />
@@ -212,6 +225,12 @@ const Hero = () => {
                   <li>
                     <a
                       href="mailto:me@kishanlalbj.dev"
+                      onClick={() =>
+                        trackEvent("social_link_click", {
+                          platform: "email",
+                          location: "hero"
+                        })
+                      }
                       className="text-white/35 hover:text-primary transition-colors duration-200"
                     >
                       <i className="fa fa-envelope text-xl" />

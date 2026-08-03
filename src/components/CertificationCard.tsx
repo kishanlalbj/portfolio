@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { AwardIcon } from "lucide-react";
 import { Achievement } from "@/types";
+import { trackEvent } from "@/lib/analytics";
 
 const CertificationCard = ({ title, issuer, date, badge }: Achievement) => {
   return (
@@ -24,6 +25,12 @@ const CertificationCard = ({ title, issuer, date, badge }: Achievement) => {
               href={badge}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("certification_badge_click", {
+                  certification_name: title,
+                  issuer
+                })
+              }
               className="inline-block text-xs text-primary/60 hover:text-primary mt-3 transition-colors duration-200"
             >
               View Badge →

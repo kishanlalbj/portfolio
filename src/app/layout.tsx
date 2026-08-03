@@ -3,7 +3,10 @@ import type React from "react";
 import { Source_Code_Pro } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-2CBZRZRQ32";
 
 const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
@@ -72,9 +75,23 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics />
+        {/* Google Consent Mode v2 defaults — must run before gtag.js loads */}
+        <Script id="ga-consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              wait_for_update: 500
+            });
+          `}
+        </Script>
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-2CBZRZRQ32"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
         />
         <Script id="ga-init" strategy="afterInteractive">
@@ -82,9 +99,10 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-2CBZRZRQ32');
+            gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
+        <CookieConsentBanner />
         {/* FontAwesome */}
         <Script
           src="https://kit.fontawesome.com/459b172069.js"
