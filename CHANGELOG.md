@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/kishanlalbj/portfolio/compare/v1.2.0...v1.2.1) (2026-08-03)
+
+
+### Bug Fixes
+
+* **a11y:** resolve SonarCloud accessibility and code smell issues ([8b5e0a5](https://github.com/kishanlalbj/portfolio/commit/8b5e0a5f1f718345f4dd0a7dd1d63883207b1483)), closes [#hero](https://github.com/kishanlalbj/portfolio/issues/hero)
+* **ci:** ignore install scripts and avoid unpinned npx installs ([530fc56](https://github.com/kishanlalbj/portfolio/commit/530fc562ec1169d3e75ecc4f0993e7f6c061a987))
+* **deps:** bump next.js and pin semantic-release to patch security advisories ([4f6c054](https://github.com/kishanlalbj/portfolio/commit/4f6c054474dcc879b1476b92c3d3818242d6a6e1))
+
 # [1.2.0](https://github.com/kishanlalbj/portfolio/compare/v1.1.0...v1.2.0) (2026-08-03)
 
 
