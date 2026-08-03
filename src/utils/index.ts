@@ -61,10 +61,6 @@ export const ScrollToTopObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     const el = document.getElementById("scrollToTop");
 
-    if (entry.isIntersecting) {
-      if (el) el.style.display = "block";
-    } else {
-      if (el) el.style.display = "none";
-    }
+    if (el) el.style.display = entry.isIntersecting ? "block" : "none";
   });
 });

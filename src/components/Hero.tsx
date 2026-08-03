@@ -29,8 +29,10 @@ const item = {
 
 const Hero = () => {
   return (
-    <>
-      <div className="relative h-screen overflow-hidden [scroll-snap-align:start]">
+    <div
+      id="hero"
+      className="relative h-screen overflow-hidden snap-start"
+    >
         {/* Galaxy background */}
         <StarBackground count={220} width="100%" height="100%" />
 
@@ -259,8 +261,9 @@ const Hero = () => {
           />
         </motion.div>
       </div>
-    </>
   );
 };
 
 export default Hero;
+
+
