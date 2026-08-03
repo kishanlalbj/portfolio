@@ -29,3 +29,14 @@ jobs:
       - run: npx --no-install semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+
+      - name: Back-merge main into develop
+        run: |
+          gh pr create \
+            --base develop \
+            --head main \
+            --title "chore: sync main to develop after release" \
+            --body "Automated back-merge from main to develop after semantic-release." \
+          || echo "Back-merge PR already exists or no changes to merge, skipping."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
