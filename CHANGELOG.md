@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/kishanlalbj/portfolio/compare/v1.1.0...v1.2.0) (2026-08-03)
+
+
+### Bug Fixes
+
+* **ci:** use RELEASE_TOKEN for semantic-release push ([4e940d2](https://github.com/kishanlalbj/portfolio/commit/4e940d266f89c7afb84f3c8e759b7a9171ca839c))
+
+
+### Features
+
+* implement cookie consent banner and tracking events ([2a37645](https://github.com/kishanlalbj/portfolio/commit/2a37645c6ffb1b1459538cd154e8a33549dc38f3))
+* implement cookie consent banner and tracking events ([7abc738](https://github.com/kishanlalbj/portfolio/commit/7abc738c41b7723c81febb745a5f53b0472fe7b8))
+* update email references to use siteAdminEmail from data.json ([#16](https://github.com/kishanlalbj/portfolio/issues/16)) ([12150e6](https://github.com/kishanlalbj/portfolio/commit/12150e620e098f9146a93f4e1c276a1b7f93ec70))
+
 # [1.1.0](https://github.com/kishanlalbj/portfolio/compare/v1.0.4...v1.1.0) (2026-05-18)
 
 
