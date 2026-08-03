@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/kishanlalbj/portfolio/compare/v1.2.1...v1.3.0) (2026-08-03)
+
+
+### Features
+
+* **ci:** auto-open a back-merge PR from main to develop after release ([aab66f2](https://github.com/kishanlalbj/portfolio/commit/aab66f28556fa5f368610230df384d22c647902f))
+
 ## [1.2.1](https://github.com/kishanlalbj/portfolio/compare/v1.2.0...v1.2.1) (2026-08-03)
 
 
