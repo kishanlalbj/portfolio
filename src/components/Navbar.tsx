@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { MenuIcon, XIcon } from "lucide-react";
 
 const links = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
   { label: "Projects", href: "#projects" },
@@ -25,11 +25,8 @@ const Navbar = () => {
         className="h-14 glass-card rounded-xl px-4"
       >
         <div className="flex items-center justify-between h-full">
-          <a href="#" className="text-base font-bold tracking-tight">
-            <span className="text-primary">&lt;</span>kishanlalbj
-            <span className="text-primary">.dev</span>
-            <span className="text-white/40"> /</span>
-            <span className="text-primary">&gt;</span>
+          <a href="#hero" className="text-base font-bold tracking-tight">
+            <span className="text-primary">&lt;</span>kishanlalbj<span className="text-primary">.dev</span> <span className="text-white/40">/</span><span className="text-primary">&gt;</span>
           </a>
 
           {/* Desktop nav */}
@@ -51,6 +48,7 @@ const Navbar = () => {
 
           {/* Mobile hamburger */}
           <button
+            type="button"
             className="md:hidden text-white/60 hover:text-primary duration-200 bg-transparent"
             onClick={() => setIsOpen((o) => !o)}
             aria-label="Toggle menu"

@@ -127,7 +127,6 @@ const Home = ({ data }: { data: Source }) => {
           </ul>
           <motion.div variants={itemVariants} className="text-center mt-12">
             <a
-              role="button"
               href="https://github.com/kishanlalbj?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
@@ -137,7 +136,7 @@ const Home = ({ data }: { data: Source }) => {
                   location: "projects_section"
                 })
               }
-              className="text-sm"
+              className="btn text-sm"
             >
               More On Github
             </a>
@@ -187,7 +186,6 @@ const Home = ({ data }: { data: Source }) => {
             </motion.p>
             <motion.a
               variants={itemVariants}
-              role="button"
               href={`mailto:${data.personalDetails.siteAdminEmail}`}
               onClick={() =>
                 trackEvent("social_link_click", {
@@ -195,7 +193,7 @@ const Home = ({ data }: { data: Source }) => {
                   location: "contact_section"
                 })
               }
-              className="inline-flex gap-2 text-sm items-center mt-8"
+              className="btn inline-flex gap-2 text-sm items-center mt-8"
             >
               <MailIcon size={14} />
               Contact Me
