@@ -1,3 +1,12 @@
+## [1.3.1](https://github.com/kishanlalbj/portfolio/compare/v1.3.0...v1.3.1) (2026-09-18)
+
+
+### Bug Fixes
+
+* **deps:** patch critical Next.js RCE and other npm vulnerabilities ([bb390fa](https://github.com/kishanlalbj/portfolio/commit/bb390fa6a85177c64a5dc0fae21197617037778c))
+* **deps:** patch critical Next.js RCE and other npm vulnerabilities ([22a3814](https://github.com/kishanlalbj/portfolio/commit/22a3814e77bea8599f533950aa60cdea760b6805))
+* **deps:** patch critical Next.js RCE and other npm vulnerabilities ([01aae82](https://github.com/kishanlalbj/portfolio/commit/01aae82d231cbaf942d5003de6908134016a492c))
+
 # [1.3.0](https://github.com/kishanlalbj/portfolio/compare/v1.2.1...v1.3.0) (2026-08-03)
 
 
