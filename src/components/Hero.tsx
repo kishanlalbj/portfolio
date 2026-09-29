@@ -175,7 +175,7 @@ const Hero = () => {
                     size={13}
                     className="text-primary/60"
                   />
-                  Full Stack Developer
+                  Senior Full Stack Engineer
                 </motion.p>
                 <motion.p
                   variants={item}

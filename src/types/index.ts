@@ -21,6 +21,7 @@ export type Work = Id & {
   to: string;
   isPresent: boolean;
   designation: string;
+  highlights?: string[];
 };
 
 export type Achievement = Id & {

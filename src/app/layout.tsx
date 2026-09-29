@@ -21,18 +21,20 @@ const siteUrl = "https://kishanlalbj.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Kishanlal BJ | Full Stack Developer",
+    default: "Kishanlal BJ | Senior Full Stack Engineer",
     template: "%s | Kishanlal BJ"
   },
   description:
-    "Full Stack Developer with 9+ years of experience building robust, user-centric web applications using the MERN stack. Available for new opportunities.",
+    "Senior Full Stack Engineer with 10+ years of experience building web applications with React, Next.js, TypeScript and Node.js. Available for new opportunities.",
   keywords: [
     "Kishanlal",
     "kishanlalbj",
     "Full Stack Developer",
+    "Senior Full Stack Engineer",
     "MERN Stack",
     "React",
     "Next.js",
+    "TypeScript",
     "Node.js",
     "MongoDB",
     "Portfolio",
@@ -45,17 +47,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Kishanlal BJ | Full Stack Developer",
+    title: "Kishanlal BJ | Senior Full Stack Engineer",
     description:
-      "Full Stack Developer with 9+ years of experience building robust, user-centric web applications using the MERN stack.",
+      "Senior Full Stack Engineer with 10+ years of experience building web applications with React, Next.js, TypeScript and Node.js.",
     siteName: "Kishanlal BJ Portfolio",
     images: [{ url: "/me.jpeg", width: 400, height: 400, alt: "Kishanlal BJ" }]
   },
   twitter: {
     card: "summary",
-    title: "Kishanlal BJ | Full Stack Developer",
+    title: "Kishanlal BJ | Senior Full Stack Engineer",
     description:
-      "Full Stack Developer with 9+ years of experience building robust, user-centric web applications using the MERN stack.",
+      "Senior Full Stack Engineer with 10+ years of experience building web applications with React, Next.js, TypeScript and Node.js.",
     images: ["/me.jpeg"]
   },
   robots: {
