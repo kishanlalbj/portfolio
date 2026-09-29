@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Kishanlal BJ"
   },
   description:
-    "Full Stack Developer with 9+ years of experience building robust, user-centric web applications using the MERN stack. Available for new opportunities.",
+    "Full Stack Developer with 10+ years of experience building robust, user-centric web applications using the MERN stack. Available for new opportunities.",
   keywords: [
     "Kishanlal",
     "kishanlalbj",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Kishanlal BJ | Full Stack Developer",
     description:
-      "Full Stack Developer with 9+ years of experience building robust, user-centric web applications using the MERN stack.",
+      "Full Stack Developer with 10+ years of experience building robust, user-centric web applications using the MERN stack.",
     siteName: "Kishanlal BJ Portfolio",
     images: [{ url: "/me.jpeg", width: 400, height: 400, alt: "Kishanlal BJ" }]
   },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Kishanlal BJ | Full Stack Developer",
     description:
-      "Full Stack Developer with 9+ years of experience building robust, user-centric web applications using the MERN stack.",
+      "Full Stack Developer with 10+ years of experience building robust, user-centric web applications using the MERN stack.",
     images: ["/me.jpeg"]
   },
   robots: {
