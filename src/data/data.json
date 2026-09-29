@@ -90,7 +90,7 @@
       "id": 4,
       "company": "Wipro Digital",
       "isPresent": false,
-      "to": "Dev 2020",
+      "to": "Dec 2020",
       "from": "June 2016",
       "designation": "Project Engineer",
       "place": "Bangalore"
@@ -102,7 +102,7 @@
       "title": "Health & Expense Tracker",
       "image": "proj-6.png",
       "techStack": ["NextJS", "Docker", "Postgres", "Shadcn"],
-      "description": "Webapp to track your expenses and health with necessory insights",
+      "description": "Webapp to track your expenses and health with necessary insights",
       "liveUrl": "https://daily-tracker-taupe.vercel.app",
       "sourceUrl": "https://github.com/kishanlalbj/daily-tracker"
     },
