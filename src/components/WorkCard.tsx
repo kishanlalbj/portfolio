@@ -4,7 +4,14 @@ import { motion } from "motion/react";
 import { BriefcaseBusinessIcon } from "lucide-react";
 import { Work } from "@/types";
 
-const WorkCard = ({ company, from, to, isPresent, designation }: Work) => {
+const WorkCard = ({
+  company,
+  from,
+  to,
+  isPresent,
+  designation,
+  highlights
+}: Work) => {
   return (
     <motion.div
       whileHover={{ y: -3 }}
@@ -21,6 +28,13 @@ const WorkCard = ({ company, from, to, isPresent, designation }: Work) => {
           <p className="text-xs text-white/30 mt-2">
             {from} — {isPresent ? "Present" : to}
           </p>
+          {highlights && highlights.length > 0 && (
+            <ul className="mt-3 space-y-1.5 list-disc pl-4 text-sm text-white/60">
+              {highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </motion.div>

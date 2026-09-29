@@ -1,3 +1,17 @@
+# [1.4.0](https://github.com/kishanlalbj/portfolio/compare/v1.3.1...v1.4.0) (2026-09-29)
+
+
+### Bug Fixes
+
+* **content:** fix typos ([6769df6](https://github.com/kishanlalbj/portfolio/commit/6769df632b03a596e08bbf77ceb6cda1dcd15bf9))
+* **content:** update experience to 10+ years ([203d227](https://github.com/kishanlalbj/portfolio/commit/203d227d10f51564bd9c9dbe5e3b19b09d19e328))
+
+
+### Features
+
+* **content:** position profile as senior full stack engineer ([bb0635a](https://github.com/kishanlalbj/portfolio/commit/bb0635a456855efac029df5f66cdc7a4f900f74a))
+* **work:** support optional highlights on work cards ([630e6fa](https://github.com/kishanlalbj/portfolio/commit/630e6fa8e781af49f4845aab7fc9ba391b5a090e))
+
 ## [1.3.1](https://github.com/kishanlalbj/portfolio/compare/v1.3.0...v1.3.1) (2026-09-18)
 
 
