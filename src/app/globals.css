@@ -23,10 +23,8 @@
   button,
   a.btn {
     @apply px-5 py-2.5 rounded-lg cursor-pointer inline-flex items-center justify-center gap-2;
-    background: rgba(246, 241, 213, 0.07);
+    background: #1e1e1c;
     border: 1px solid rgba(246, 241, 213, 0.2);
-    /* Contrast checkers flag this against the literal 7%-alpha background color;
-       actual contrast is against --color-space behind it, which is high-contrast. */
     color: #f6f1d5;
     letter-spacing: 0.05em;
     position: relative;
@@ -55,7 +53,7 @@
 
   button:hover,
   a.btn:hover {
-    background: rgba(246, 241, 213, 0.12);
+    background: #2a2926;
     border-color: rgba(246, 241, 213, 0.38);
     box-shadow: 0 0 22px rgba(246, 241, 213, 0.1),
       0 0 44px rgba(196, 154, 58, 0.07), 0 4px 16px rgba(0, 0, 0, 0.3);
@@ -272,6 +270,6 @@
   }
   .title-reflect,
   .icon-reflect {
-    -webkit-box-reflect: none;
+    -webkit-box-reflect: initial;
   }
 }
