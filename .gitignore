@@ -18,6 +18,7 @@ next-env.d.ts
 # Build output
 dist
 dist-ssr
+*.tsbuildinfo
 
 # Environment variables
 .env
